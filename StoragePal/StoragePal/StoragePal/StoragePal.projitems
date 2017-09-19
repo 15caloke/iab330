@@ -25,5 +25,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SP_logo_reverse.jpg" />
   </ItemGroup>
 </Project>
