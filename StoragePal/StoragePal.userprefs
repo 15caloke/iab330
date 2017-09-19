@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{AE765667-DDD9-42CE-B6AA-96DAC5A2B863}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal/StoragePalPage.xaml">
+    <Files>
+      <File FileName="StoragePal/StoragePalPage.xaml" Line="32" Column="83" />
+      <File FileName="StoragePal/StoragePalPage.xaml.cs" Line="9" Column="35" />
+      <File FileName="StoragePal/App.xaml.cs" Line="11" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="25" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StoragePal.Droid PreferredExecutionTarget="Android.AVD_for_Galaxy_Nexus_by_Google" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.StoragePal.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6512ABF3-1EBD-4A9A-A652-FDB9A9FB2864">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.StoragePal.iOS>
+</Properties>
