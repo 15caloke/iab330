@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:StoragePal" 
+    x:Class="StoragePal.StoragePalPage">
+
+    <local:MainPage>
+    </local:MainPage>
+    <local:ItemsPage/>
+
+<!--    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key = "StoragePalOrange" TargetType ="Icon">
+                <Setter Property ="IconColor" Value = "Red"/>
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>-->
+    
+<!--    <ContentPage Title = "StoragePal" Icon ="icon_Main.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions = "Center" HorizontalOptions = "Center">
+            <Label Text="Main" VerticalOptions="Center" HorizontalOptions="Center" />
+                </StackLayout>
+                    </ContentPage.Content>
+        </ContentPage>
+    
+    <ContentPage Title = "ITEMS" Icon ="icon_Items.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions = "Center" HorizontalOptions = "Center">
+            <Label Text="Items" VerticalOptions="Center" HorizontalOptions="Center" />
+                </StackLayout>
+                    </ContentPage.Content>
+        </ContentPage>
+
+    <ContentPage Title = "MOVE" Icon ="icon_Moving.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions = "Center" HorizontalOptions = "Center">
+            <Label Text="Moving" VerticalOptions="Center" HorizontalOptions="Center" />
+                </StackLayout>
+                    </ContentPage.Content>
+        </ContentPage>
+
+    <ContentPage Title = "SEARCH" Icon ="icon_Search.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions = "Center" HorizontalOptions = "Center">
+            <Label Text="Search" VerticalOptions="Center" HorizontalOptions="Center" />
+                </StackLayout>
+                    </ContentPage.Content>
+        </ContentPage>
+-->
+
+    
+</TabbedPage>

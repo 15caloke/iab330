@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StoragePal1.MainPage"
+    Title = "StoragePal"
+    Icon = "SP_Logo_Icon.png">
+	<ContentPage.Content>
+        
+        <StackLayout Padding = "0, 50">
+            <Label Text = "StoragePal" FontFamily = "Helvetica" HorizontalTextAlignment = "Center" Font = "Bold" FontSize = "35"/>
+            <Image Source="SP_Logo_1387.png"
+                 WidthRequest="300" 
+                 HeightRequest="300"/>
+            <Label Text = "Click to Begin" FontFamily = "Helvetica" HorizontalTextAlignment = "Center" Font = "Bold" FontSize = "10"/>
+        </StackLayout>
+        
+	</ContentPage.Content>
+</ContentPage>
