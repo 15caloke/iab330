@@ -11,8 +11,8 @@
 namespace StoragePal {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/jedriggs/Desktop/UNI/IAB330/StoragePalApplication/StoragePal/StoragePal/St" +
-        "oragePalPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/jedriggs/Documents/GitHub/iab330/StoragePal/StoragePal/StoragePalPage.xaml" +
+        "")]
     public partial class StoragePalPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
