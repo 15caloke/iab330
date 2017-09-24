@@ -5,6 +5,36 @@
     Title = "Items"
     Icon = "Items_Icon.png">
 	<ContentPage.Content>
-        <Label Text = "Items"/>
+        
+        <!--<ResourceDictionary>
+            <Style x:Key= "LabelStyles" TargetType= "Label">
+                <Setter Property=""/>
+            </Style>
+        </ResourceDictionary>-->
+        
+       <StackLayout>
+            
+            <Label Text= "Items" 
+            HeightRequest= "70"
+            BackgroundColor= "Orange" 
+            TextColor= "White" 
+            FontAttributes= "Bold"
+            FontSize= "30"
+            HorizontalTextAlignment= "Center"
+            VerticalTextAlignment= "Center"/>
+            
+            <Button Text= "+ Add Item" 
+            TextColor= "Orange" 
+            FontSize= "20"/>
+            
+            <SearchBar Text= "Item Search" 
+             BackgroundColor= "Orange" >
+            </SearchBar>
+            
+            <ListView x:Name="ItemsList" 
+             IsPullToRefreshEnabled= "true">
+
+            </ListView>
+       </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

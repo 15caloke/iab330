@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StoragePal1.YourBoxesPage"
+    Title = "Your Boxes"
+    Icon = "YourBoxes_Icon.png">
+	<ContentPage.Content>
+    <StackLayout>
+        <Label Text= "Your Boxes" 
+            HeightRequest= "70"
+            BackgroundColor= "Orange" 
+            TextColor= "White" 
+            FontAttributes= "Bold"
+            FontSize= "30"
+            HorizontalTextAlignment= "Center"
+            VerticalTextAlignment= "Center"/>
+        <Picker Title= "Your Boxes">
+            <Picker.Items>
+                <x:String>Box 1</x:String>
+                <x:String>Box 2</x:String>
+            </Picker.Items>
+        </Picker>
+        <ListView x:Name="ItemsList" 
+         IsPullToRefreshEnabled= "true" HeightRequest="10">
+        </ListView>
+        <Button Text= "Move" 
+            TextColor= "Orange" 
+            FontSize= "20"/>
+        <Button Text= "Delete" 
+            TextColor= "Orange" 
+            FontSize= "20"/>
+        <Button Text= "Export" 
+            TextColor= "Orange" 
+            FontSize= "20"/>
+        <Button Text= "Print" 
+            TextColor= "Orange" 
+            FontSize= "20"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

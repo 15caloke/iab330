@@ -19,3 +19,6 @@
 /Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.1.pdb
 /Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.MainPage.xaml.g.cs
 /Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.ItemsPage.xaml.g.cs
+/Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.MovingPage.xaml.g.cs
+/Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.SearchPage.xaml.g.cs
+/Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.YourBoxesPage.xaml.g.cs

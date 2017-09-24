@@ -5,5 +5,8 @@
     x:Class="StoragePal1.StoragePal1_1Page">
     <local:MainPage/>
     <local:ItemsPage/>
+    <local:MovingPage/>
+    <local:YourBoxesPage/>
+    <local:SearchPage/>
 	<!--<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
 </TabbedPage>
