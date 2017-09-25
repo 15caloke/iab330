@@ -5,6 +5,17 @@
     Title = "Moving"
     Icon = "Moving_Icon.png">
 	<ContentPage.Content>
-        <Label Text = "Moving"/>
+        <StackLayout>
+          <Label Text= "Moving" 
+            HeightRequest= "70"
+            BackgroundColor= "Orange" 
+            TextColor= "White" 
+            FontAttributes= "Bold"
+            FontSize= "30"
+            HorizontalTextAlignment= "Center"
+            VerticalTextAlignment= "Center"/>
+
+            
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

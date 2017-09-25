@@ -13,7 +13,6 @@
         </ResourceDictionary>-->
         
        <StackLayout>
-            
             <Label Text= "Items" 
             HeightRequest= "70"
             BackgroundColor= "Orange" 

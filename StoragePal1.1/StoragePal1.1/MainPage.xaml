@@ -4,6 +4,7 @@
     x:Class="StoragePal1.MainPage"
     Title = "StoragePal"
     Icon = "SP_Logo_Icon.png">
+    
 	<ContentPage.Content> 
         <StackLayout Padding= "0,50">
             <Label Text= "StoragePal" 
@@ -11,20 +12,23 @@
             VerticalTextAlignment= "Center"
             HorizontalTextAlignment= "Center" 
             Font= "Bold" 
-            FontSize= "45"
+            FontSize= "50"
             VerticalOptions= "EndAndExpand"
+            HorizontalOptions="CenterAndExpand"
             TextColor= "Orange"/>
             
             <Image x:Name= "StoragePalButton" Source="SP_Logo_1387.png"
-              WidthRequest="310" 
-              HeightRequest="310"
-              VerticalOptions= "CenterAndExpand"/>
+              WidthRequest="280" 
+              HeightRequest="280"
+              VerticalOptions= "CenterAndExpand"
+              HorizontalOptions="CenterAndExpand"/>
             
-            <Label Text= "Tap to Begin" 
+            <Label Text= "TAP TO BEGIN" 
             FontFamily= "Helvetica" 
             HorizontalTextAlignment= "Center" 
             FontSize= "20" 
-            VerticalOptions= "FillAndExpand"/>
+            VerticalOptions= "FillAndExpand"
+            HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
         
 	</ContentPage.Content>

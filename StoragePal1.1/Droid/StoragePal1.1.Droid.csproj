@@ -120,6 +120,7 @@
     <AndroidResource Include="Resources\drawable\Moving_Icon.png" />
     <AndroidResource Include="Resources\drawable\YourBoxes_Icon.png" />
     <AndroidResource Include="Resources\drawable\Search_Icon.png" />
+    <AndroidResource Include="Resources\drawable\NewUser_Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
