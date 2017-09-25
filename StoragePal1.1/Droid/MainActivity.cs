@@ -7,6 +7,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using SQLite.Net.Interop;
+using SQLite.Net.Platform.XamarinAndroid;
 
 namespace StoragePal1.Droid
 {
@@ -19,6 +22,10 @@ namespace StoragePal1.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            // Register database location
+            DependencyService.Register<FilePathDroid>();
+            DependencyService.Register<ISQLitePlatform, SQLitePlatformAndroid>();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
