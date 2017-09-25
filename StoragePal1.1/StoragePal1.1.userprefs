@@ -1,11 +1,18 @@
 ﻿<Properties StartupConfiguration="{BD8BB5D5-A2A9-4CC9-86C7-427C93F0C74B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/YourBoxesPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/App.xaml">
     <Files>
-      <File FileName="StoragePal1.1/StoragePal1.1Page.xaml" Line="12" Column="14" />
-      <File FileName="StoragePal1.1/MainPage.xaml" Line="30" Column="1" />
-      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="35" Column="24" />
-      <File FileName="StoragePal1.1/ItemsPage.xaml.cs" Line="12" Column="35" />
-      <File FileName="StoragePal1.1/YourBoxesPage.xaml" Line="10" Column="1" />
+      <File FileName="StoragePal1.1/UserLogInPage.xaml" Line="5" Column="44" />
+      <File FileName="StoragePal1.1/App.xaml.cs" Line="25" Column="10" />
+      <File FileName="StoragePal1.1/SignUpPage.xaml" Line="20" Column="35" />
+      <File FileName="StoragePal1.1/SignUpPage.xaml.cs" Line="13" Column="10" />
+      <File FileName="StoragePal1.1/UserLogInPage.xaml.cs" Line="10" Column="27" />
+      <File FileName="StoragePal1.1/MainPage.xaml" Line="21" Column="31" />
+      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="40" Column="1" />
+      <File FileName="StoragePal1.1/MovingPage.xaml" Line="22" Column="1" />
+      <File FileName="StoragePal1.1/SearchPage.xaml" Line="10" Column="1" />
+      <File FileName="StoragePal1.1/StoragePal1.1Page.xaml" Line="6" Column="5" />
+      <File FileName="StoragePal1.1/App.xaml" Line="7" Column="1" />
+      <File FileName="StoragePal1.1/YourBoxesPage.xaml" Line="41" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

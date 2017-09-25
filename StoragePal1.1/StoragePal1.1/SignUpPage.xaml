@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="StoragePal1.SignUpPage"
+    Title="Sign Up">
+    
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing= "10" Padding="30,0">
+           <Image  Source="NewUser_Image.png"
+              WidthRequest="200" 
+              VerticalOptions= "CenterAndExpand"
+              HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Email address" />
+            <Entry x:Name="emailEntry" />
+            <Label Text="Username" />
+            <Entry x:Name="usernameEntry"/>
+            <Label Text="Password" />
+            <Entry x:Name="passwordEntry" IsPassword="true" />
+            <Button Text="Sign Up"/>
+            <Label x:Name="messageLabel" />
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

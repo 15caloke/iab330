@@ -45,6 +45,12 @@
     <EmbeddedResource Include="YourBoxesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserLogInPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="YourBoxesPage.xaml.cs">
       <DependentUpon>YourBoxesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogInPage.xaml.cs">
+      <DependentUpon>UserLogInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

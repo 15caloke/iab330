@@ -8,7 +8,7 @@ namespace StoragePal1
         {
             InitializeComponent();
 
-            MainPage = new StoragePal1_1Page();
+            MainPage = new NavigationPage (new UserLogInPage());
         }
 
         protected override void OnStart()
