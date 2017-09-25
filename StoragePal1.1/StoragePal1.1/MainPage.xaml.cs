@@ -11,5 +11,10 @@ namespace StoragePal1
         {
             InitializeComponent();
         }
+
+        async void CallCameraPage (Object Sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CameraPage());
+        }
     }
 }

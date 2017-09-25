@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="CameraPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\SP_Logo_Icon.png" />
@@ -135,6 +136,12 @@
     <BundleResource Include="Resources\YourBoxes_Icon.png" />
     <BundleResource Include="Resources\Search_Icon.png" />
     <BundleResource Include="Resources\NewUser_Image.png" />
+    <BundleResource Include="Resources\NoFlashButton.png" />
+    <BundleResource Include="Resources\TakePhotoButton.png" />
+    <BundleResource Include="Resources\ToggleCameraButton.png" />
+    <BundleResource Include="Resources\FlashButton.png" />
+    <BundleResource Include="Resources\SP_Logo_1387-White.png" />
+    <BundleResource Include="Resources\SP_Word_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -16,13 +16,15 @@
             VerticalOptions= "EndAndExpand"
             HorizontalOptions="CenterAndExpand"
             TextColor= "Orange"/>
-            
-            <Image x:Name= "StoragePalButton" Source="SP_Logo_1387.png"
+
+            <Button Image="SP_Logo_1387.png"
               WidthRequest="280" 
               HeightRequest="280"
               VerticalOptions= "CenterAndExpand"
-              HorizontalOptions="CenterAndExpand"/>
-            
+              HorizontalOptions="CenterAndExpand" 
+              Clicked="CallCameraPage" BorderColor="Transparent"
+            BackgroundColor="Transparent"/>
+
             <Label Text= "TAP TO BEGIN" 
             FontFamily= "Helvetica" 
             HorizontalTextAlignment= "Center" 
