@@ -266,3 +266,11 @@ C:/Users/calum/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Deb
 /Users/jedriggs/Projects/StoragePal1.1.2/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/FlashButton.png
 /Users/jedriggs/Projects/StoragePal1.1.2/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Logo_1387-White.png
 /Users/jedriggs/Projects/StoragePal1.1.2/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Word_Logo.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/SQLite.Net.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/SQLite.Net.Platform.XamarinIOS.Unified.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/NoFlashButton.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/TakePhotoButton.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/ToggleCameraButton.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/FlashButton.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Logo_1387-White.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Word_Logo.png

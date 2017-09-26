@@ -1,9 +1,10 @@
-﻿<Properties StartupConfiguration="{42D855CD-C482-4818-9203-9404C1EBCAA5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/MainPage.xaml">
+﻿<Properties StartupConfiguration="{BD8BB5D5-A2A9-4CC9-86C7-427C93F0C74B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/ItemsPage.xaml">
     <Files>
-      <File FileName="../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/msbuild/iOS/Xamarin.iOS.Common.targets" Line="606" Column="3" />
       <File FileName="iOS/CameraPageRenderer.cs" Line="15" Column="6" />
-      <File FileName="StoragePal1.1/MainPage.xaml" Line="6" Column="15" />
+      <File FileName="StoragePal1.1/MainPage.xaml" Line="31" Column="13" />
+      <File FileName="StoragePal1.1/MainPage.xaml.cs" Line="15" Column="20" />
+      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="40" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

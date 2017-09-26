@@ -101,3 +101,5 @@ C:/Users/calum/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/SQL
 /Users/jedriggs/Projects/StoragePal1.1.2/StoragePal1.1/obj/Debug/StoragePal1.CameraPage.xaml.g.cs
 /Users/jedriggs/Projects/StoragePal1.1.2/StoragePal1.1/obj/Debug/StoragePal1.1.dll
 /Users/jedriggs/Projects/StoragePal1.1.2/StoragePal1.1/obj/Debug/StoragePal1.1.pdb
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/SQLite.Net.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/obj/Debug/StoragePal1.CameraPage.xaml.g.cs

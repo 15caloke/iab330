@@ -17,13 +17,17 @@
             HorizontalOptions="CenterAndExpand"
             TextColor= "Orange"/>
 
-            <Button Image="SP_Logo_1387.png"
-              WidthRequest="280" 
+            <Image Source="SP_Logo_1387.png"
+            WidthRequest="280" 
               HeightRequest="280"
               VerticalOptions= "CenterAndExpand"
-              HorizontalOptions="CenterAndExpand" 
-              Clicked="CallCameraPage" BorderColor="Transparent"
-            BackgroundColor="Transparent"/>
+              HorizontalOptions="CenterAndExpand">
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="CallCameraPage"
+                        NumberOfTapsRequired="1" />
+                   </Image.GestureRecognizers>
+            </Image>
 
             <Label Text= "TAP TO BEGIN" 
             FontFamily= "Helvetica" 
