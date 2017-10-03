@@ -11,5 +11,10 @@ namespace StoragePal1
         {
             InitializeComponent();
         }
-    }
+		async void AddItemButtonClicked(Object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new SubPages.AddNewItemPage());
+		}
+
+	}
 }

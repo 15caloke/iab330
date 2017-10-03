@@ -34,3 +34,6 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Tools.dll
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/SQLite.Net.Core-PCL.3.1.1/lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/SQLiteNetExtensions.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/Newtonsoft.Json.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/mono/Xamarin.iOS/Facades/System.Resources.ResourceManager.dll

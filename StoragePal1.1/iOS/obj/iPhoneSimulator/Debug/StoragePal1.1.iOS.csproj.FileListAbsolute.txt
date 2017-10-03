@@ -274,3 +274,9 @@ C:/Users/calum/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Deb
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/FlashButton.png
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Logo_1387-White.png
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/SP_Word_Logo.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/SQLiteNetExtensions.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/SQLiteNetExtensions.dll.mdb
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/ImageUploadIcon.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/add_item_icon.png

@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{BD8BB5D5-A2A9-4CC9-86C7-427C93F0C74B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/ItemsPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
     <Files>
-      <File FileName="iOS/CameraPageRenderer.cs" Line="15" Column="6" />
-      <File FileName="StoragePal1.1/MainPage.xaml" Line="31" Column="13" />
-      <File FileName="StoragePal1.1/MainPage.xaml.cs" Line="15" Column="20" />
-      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="40" Column="1" />
+      <File FileName="StoragePal1.1/ViewModels/BaseViewModel.xaml" Line="6" Column="1" />
+      <File FileName="StoragePal1.1/ViewModels/BaseViewModel.xaml.cs" Line="8" Column="12" />
+      <File FileName="StoragePal1.1/ViewModels/BaseViewModel.cs" Line="50" Column="26" />
+      <File FileName="StoragePal1.1/ViewModels/MainViewModel.cs" Line="64" Column="32" />
+      <File FileName="StoragePal1.1/Models/Items.cs" Line="1" Column="1" />
+      <File FileName="StoragePal1.1/ViewModels/ItemsViewModel.cs" Line="34" Column="1" />
+      <File FileName="StoragePal1.1/Databases/Database.cs" Line="101" Column="28" />
+      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml" Line="31" Column="34" />
+      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="32" Column="13" />
+      <File FileName="StoragePal1.1/MainPage.xaml" Line="42" Column="1" />
+      <File FileName="StoragePal1.1/ItemsPage.xaml.cs" Line="21" Column="1" />
+      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs" Line="13" Column="10" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

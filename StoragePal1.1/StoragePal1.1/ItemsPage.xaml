@@ -24,7 +24,7 @@
             
             <Button Text= "+ Add Item" 
             TextColor= "Orange" 
-            FontSize= "20"/>
+            FontSize= "20" Clicked="AddItemButtonClicked"/>
             
             <SearchBar Text= "Item Search" 
              BackgroundColor= "Orange" >

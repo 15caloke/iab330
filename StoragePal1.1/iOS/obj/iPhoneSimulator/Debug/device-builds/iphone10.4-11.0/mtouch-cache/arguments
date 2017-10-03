@@ -333,6 +333,10 @@
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/SQLiteNetExtensions.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/Newtonsoft.Json.dll \
+	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll \
