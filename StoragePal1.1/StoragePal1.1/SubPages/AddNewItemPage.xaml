@@ -5,17 +5,25 @@
     Title="Add Item"
     NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
-        
+
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30,0">
-            <Entry x:Name="itemName" 
-            Placeholder="Item Name" 
+            <Entry x:Name="itemName"
+            AutomationId="itemName"
+            Text="{Binding Name}"
             HorizontalTextAlignment="Center" />
-            <Entry x:Name="itemdescription" 
-            Placeholder="Description" 
+            <Entry x:Name="itemDescription"
+            AutomationId="itemDescription"
+                   Text="{Binding Description}"
             HorizontalTextAlignment="Center" />
             <Entry x:Name="boxNumber" 
-            Placeholder="Box Number" 
+            AutomationId="boxNumber"
+                   Text="{Binding BoxNumber}"
             HorizontalTextAlignment="Center"/>
+            <!--      <Entry x:Name="imagePath"
+            AutomationId="imagePath"
+                   Text="{Binding ImagePath}"
+            HorizontalTextAlignment="Center" /> -->
+
             <Image Source="ImageUploadIcon.png"
             WidthRequest="100" 
             HeightRequest="100"
@@ -26,15 +34,15 @@
             HeightRequest="50"
             VerticalOptions= "CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-            <Image.GestureRecognizers>
+                <Image.GestureRecognizers>
                     <TapGestureRecognizer
-                    Command=""
-                        Tapped=""
-                        NumberOfTapsRequired="2"
+                        NumberOfTapsRequired="1"
+                        Tapped="TapGestureRecognizer_Tapped"
+                        Command="{Binding SubmitCommand}"
                          />
-                   </Image.GestureRecognizers>
+                </Image.GestureRecognizers>
             </Image>
         </StackLayout>
-            
+
     </ContentPage.Content>
 </ContentPage>

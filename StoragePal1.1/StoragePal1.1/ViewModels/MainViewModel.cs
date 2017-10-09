@@ -9,82 +9,65 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace StoragePal1
-{
-	public class MainViewModel : BaseViewModel
-	{
-		private readonly Database db;
+namespace StoragePal1 {
+    public class MainViewModel : BaseViewModel {
+        public Database db; // readonly
 
-		private string name;
+        private string name;
 
-		public string Name
-		{
-			get { return name; }
-			set
-			{
-				name = value;
-				OnPropertyChanged();
-			}
-		}
-		private string description;
+        public string Name {
+            get { return name; }
+            set {
+                name = value;
+                OnPropertyChanged();
+            }
+        }
+        private string description;
 
-		public string Description
-		{
-			get { return description; }
-			set
-			{
+        public string Description {
+            get { return description; }
+            set {
                 description = value;
-				OnPropertyChanged();
-			}
-		}
+                OnPropertyChanged();
+            }
+        }
 
-		private int boxnumber;
+        private int boxNumber;
 
-		public int BoxNumber
-		{
-			get { return boxnumber; }
-			set
-			{
-                boxnumber = value;
-				OnPropertyChanged();
-			}
-		}
+        public int BoxNumber {
+            get { return boxNumber; }
+            set {
+                boxNumber = value;
+                OnPropertyChanged();
+            }
+        }
 
-		private string imagepath;
+        private string imagePath;
 
-        public string ImagePath
-		{
-            get { return imagepath; }
-			set
-			{
-				imagepath = value;
-				OnPropertyChanged();
-			}
-		}
-		public ICommand SubmitCommand { protected set; get; }
-		public ICommand SecondPageCommand { protected set; get; }
-		public MainViewModel()
-		{
-			db = new Database();
-			SubmitCommand = new Command(Submit);
-			SecondPageCommand = new Command(() =>
-			{
-			});
-		}
+        public string ImagePath {
+            get { return imagePath; }
+            set {
+                imagePath = value;
+                OnPropertyChanged();
+            }
+        }
+        public ICommand SubmitCommand { set; get; }
+        public MainViewModel() {
+            db = new Database();
+            SubmitCommand = new Command(Submit);
+        }
 
-		public void Submit()
-		{
-			db.Insert(new Items()
-			{
-				Name = this.Name,
+        public void Submit() {
+            db.Insert(new Items() {
+                Name = this.Name,
                 Description = Description,
                 BoxNumber = BoxNumber,
                 ImagePath = ImagePath
-			});
-			Name = String.Empty;
-			Description = String.Empty;
+            });
+            Name = String.Empty;
+            Description = String.Empty;
             BoxNumber = 0;
             ImagePath = String.Empty;
-		}
-	}
+        }
+    }
 }

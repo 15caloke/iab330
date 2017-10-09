@@ -4,15 +4,15 @@
     x:Class="StoragePal1.ItemsPage"
     Title = "Items"
     Icon = "Items_Icon.png">
-	<ContentPage.Content>
-        
+    <ContentPage.Content>
+
         <!--<ResourceDictionary>
             <Style x:Key= "LabelStyles" TargetType= "Label">
                 <Setter Property=""/>
             </Style>
         </ResourceDictionary>-->
-        
-       <StackLayout>
+
+        <StackLayout>
             <Label Text= "Items" 
             HeightRequest= "70"
             BackgroundColor= "Orange" 
@@ -21,19 +21,32 @@
             FontSize= "30"
             HorizontalTextAlignment= "Center"
             VerticalTextAlignment= "Center"/>
-            
+
             <Button Text= "+ Add Item" 
             TextColor= "Orange" 
             FontSize= "20" Clicked="AddItemButtonClicked"/>
-            
+
             <SearchBar Text= "Item Search" 
              BackgroundColor= "Orange" >
             </SearchBar>
-            
-            <ListView x:Name="ItemsList" 
-             IsPullToRefreshEnabled= "true">
 
+            <ListView ItemsSource="{Binding AllItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="10,0">
+                                    <StackLayout HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Description}"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding BoxNumber}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
-       </StackLayout>
-	</ContentPage.Content>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

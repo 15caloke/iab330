@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace StoragePal1.SubPages
-{
-    public partial class AddNewItemPage : ContentPage
-    {
-        public AddNewItemPage()
-        {
+namespace StoragePal1.SubPages {
+    public partial class AddNewItemPage : ContentPage {
+        public AddNewItemPage() {
             InitializeComponent();
+            BindingContext = new MainViewModel();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e) {
+            Navigation.PushAsync(new ItemsPage());
         }
     }
 }

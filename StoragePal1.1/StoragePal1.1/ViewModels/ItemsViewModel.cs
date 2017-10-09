@@ -7,27 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoragePal1
-{
-    public class ItemsViewModel : BaseViewModel
-    {
-		private readonly Database db;
-		private ObservableCollection<Items> items;
+namespace StoragePal1 {
+    public class ItemsViewModel : BaseViewModel {
+        public readonly Database db;
+        private ObservableCollection<Items> items;
 
-		public ObservableCollection<Items> Items
-		{
-			get { return items; }
-			set
-			{
-				items = value;
-				OnPropertyChanged();
-			}
-		}
+        public ObservableCollection<Items> AllItems {
+            get { return items; }
+            set {
+                items = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public ItemsViewModel()
-		{
-			db = new Database();
-			Items = new ObservableCollection<Items>(db.FetchAllItems());
-		}
+        public ItemsViewModel() {
+            db = new Database();
+            AllItems = new ObservableCollection<Items>(db.FetchAllItems());
+        }
     }
 }

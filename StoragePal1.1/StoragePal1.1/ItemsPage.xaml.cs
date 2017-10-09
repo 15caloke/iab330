@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace StoragePal1
-{
-    public partial class ItemsPage : ContentPage
-    {
-        public ItemsPage()
-        {
+namespace StoragePal1 {
+    public partial class ItemsPage : ContentPage {
+        public ItemsPage() {
             InitializeComponent();
+            BindingContext = new ItemsViewModel();
         }
-		async void AddItemButtonClicked(Object sender, EventArgs e)
-		{
-            await Navigation.PushAsync(new SubPages.AddNewItemPage());
-		}
+        private void AddItemButtonClicked(Object sender, EventArgs e) {
+            Navigation.PushAsync(new SubPages.AddNewItemPage());
+        }
 
-	}
+    }
 }
