@@ -8,6 +8,7 @@ namespace StoragePal1
 {
     public partial class ItemsPage : ContentPage
     {
+        public Database _database;
         public ItemsPage()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace StoragePal1
             BindingContext = new ItemsViewModel();
         }
         private void OnDeleteItem (Object sender, EventArgs e){
-            BindingContext = new ItemsViewModel();
+            _database = new Database();
         }
     }
 }

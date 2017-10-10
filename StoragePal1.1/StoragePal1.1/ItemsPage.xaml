@@ -30,7 +30,7 @@
              BackgroundColor= "Orange" >
             </SearchBar>
 
-            <ListView ItemsSource="{Binding AllItems}">
+            <ListView x:Name="ItemsList" ItemsSource="{Binding AllItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
