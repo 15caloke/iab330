@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <Jars></Jars>
+  <Jars>/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/obj/Debug/__library_projects__/FormsViewGroup/library_project_imports/formsviewgroup.jar</Jars>
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/obj/Debug/__library_projects__/SQLite.Net.Platform.XamarinAndroid/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/obj/Debug/__library_projects__/Xamarin.Forms.Platform.Android/library_project_imports/res</ResolvedResourceDirectory>

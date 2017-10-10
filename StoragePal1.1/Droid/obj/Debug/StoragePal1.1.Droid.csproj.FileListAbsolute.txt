@@ -212,3 +212,12 @@ C:/Users/calum/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/SQLite.Net.
 /Users/jedriggs/Projects/StoragePal1.1.2/Droid/obj/Debug/res/drawable/newuser_image.png
 /Users/jedriggs/Projects/StoragePal1.1.2/Droid/obj/Debug/R.cs.flag
 /Users/jedriggs/Projects/StoragePal1.1.2/Droid/obj/Debug/uploadflags.txt
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/SQLite.Net.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/SQLite.Net.Platform.XamarinAndroid.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/SQLiteNetExtensions.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/Newtonsoft.Json.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/StoragePal1.1.dll.mdb
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/SQLiteNetExtensions.dll.mdb
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/bin/Debug/Newtonsoft.Json.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/obj/Debug/res/drawable/imageuploadicon.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/Droid/obj/Debug/res/drawable/add_item_icon.png

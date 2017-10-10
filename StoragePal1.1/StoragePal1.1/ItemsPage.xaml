@@ -34,6 +34,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Command="{Binding DeleteCommand}"
+                                    Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="10,0">
                                     <StackLayout HorizontalOptions="StartAndExpand">

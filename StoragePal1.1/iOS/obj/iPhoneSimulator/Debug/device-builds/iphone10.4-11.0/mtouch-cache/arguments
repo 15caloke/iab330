@@ -1,6 +1,6 @@
-# Version: 11.0.0.0 (xcode9: 152b654a)
+# Version: 11.2.0.11 (d15-4-xi: 2f8bbec0)
 # [first argument, ignore] # --cache
-/Library/Frameworks/Xamarin.iOS.framework/Versions/11.0.0.0/lib/mtouch/mtouch.exe \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.2.0.11/lib/mtouch/mtouch.exe \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-cache \
 	--sim \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/StoragePal1.1.iOS.app \
@@ -21,7 +21,17 @@
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/mtouch-symbols.list \
 	--dsym=no \
 	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/AWSSDK.Core.3.3.18/lib/Xamarin.iOS10/AWSSDK.Core.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/AWSSDK.S3.3.3.11.1/lib/Xamarin.iOS10/AWSSDK.S3.dll \
+	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLCrypto.1.0.2.15130/lib/Xamarin.iOS/PCLCrypto.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLStorage.1.0.2/lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLStorage.1.0.2/lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/SQLite.Net.Core-PCL.3.1.1/lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll \
 	-r \
@@ -34,6 +44,8 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Validation.2.0.6.15003/lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
@@ -319,11 +331,23 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/AWSSDK.Core.3.3.18/lib/Xamarin.iOS10/AWSSDK.Core.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/AWSSDK.S3.3.3.11.1/lib/Xamarin.iOS10/AWSSDK.S3.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLCrypto.1.0.2.15130/lib/Xamarin.iOS/PCLCrypto.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLStorage.1.0.2/lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/PCLStorage.1.0.2/lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll \
+	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/SQLite.Net.Core-PCL.3.1.1/lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/SQLite.Net-PCL.3.1.1/lib/Xamarin.iOS10/SQLite.Net.Platform.XamarinIOS.Unified.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/bin/Debug/StoragePal1.1.dll \
+	-r \
+	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Validation.2.0.6.15003/lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll \
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
@@ -405,5 +429,5 @@
 	-r \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll \
 	--target-framework \
-	"Xamarin.iOS,v1.0" \
+	'Xamarin.iOS,v1.0' \
 	/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/StoragePal1.1.iOS.exe \

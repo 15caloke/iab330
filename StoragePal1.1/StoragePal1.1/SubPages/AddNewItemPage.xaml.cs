@@ -12,7 +12,8 @@ namespace StoragePal1.SubPages {
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e) {
-            Navigation.PushAsync(new ItemsPage());
+            Navigation.PopAsync(true);
+           // Navigation.PushAsync(new ItemsPage());
         }
     }
 }

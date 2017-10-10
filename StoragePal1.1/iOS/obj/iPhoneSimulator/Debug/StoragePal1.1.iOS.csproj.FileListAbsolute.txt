@@ -280,3 +280,15 @@ C:/Users/calum/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Deb
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/ImageUploadIcon.png
 /Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0/optimized/add_item_icon.png
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/AWSSDK.Core.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/AWSSDK.S3.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLCrypto.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLStorage.Abstractions.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLStorage.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/Validation.dll
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLStorage.Abstractions.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLStorage.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/Validation.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/PCLCrypto.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/AWSSDK.Core.xml
+/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/iOS/bin/iPhoneSimulator/Debug/AWSSDK.S3.xml

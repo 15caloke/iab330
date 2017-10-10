@@ -52,9 +52,11 @@ namespace StoragePal1 {
             }
         }
         public ICommand SubmitCommand { set; get; }
+        public ICommand DeleteCommand { set; get; }
         public MainViewModel() {
             db = new Database();
             SubmitCommand = new Command(Submit);
+            DeleteCommand = new Command(Delete);
         }
 
         public void Submit() {
@@ -68,6 +70,16 @@ namespace StoragePal1 {
             Description = String.Empty;
             BoxNumber = 0;
             ImagePath = String.Empty;
+        }
+        public void Delete()
+        {
+            db.Delete(new Items()
+            {
+                Name = this.Name,
+                Description = Description,
+                BoxNumber = BoxNumber,
+                ImagePath = ImagePath
+            });
         }
     }
 }

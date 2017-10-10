@@ -10,11 +10,11 @@
             <Entry x:Name="itemName"
             AutomationId="itemName"
             Text="{Binding Name}"
-            HorizontalTextAlignment="Center" />
+            HorizontalTextAlignment="Center" Placeholder="ITEM NAME"/>
             <Entry x:Name="itemDescription"
             AutomationId="itemDescription"
                    Text="{Binding Description}"
-            HorizontalTextAlignment="Center" />
+            HorizontalTextAlignment="Center" Placeholder="DESCRIPTION" HeightRequest="200"/>
             <Entry x:Name="boxNumber" 
             AutomationId="boxNumber"
                    Text="{Binding BoxNumber}"
