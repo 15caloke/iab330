@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{BD8BB5D5-A2A9-4CC9-86C7-427C93F0C74B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/Models/Items.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs">
     <Files>
       <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml" Line="17" Column="90" />
       <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs" Line="14" Column="19" />
