@@ -13,7 +13,8 @@
         </ResourceDictionary>-->
 
         <StackLayout>
-            <Label Text= "Items" 
+            <Label AutomationId="itemsLabel" 
+            Text= "Items" 
             HeightRequest= "70"
             BackgroundColor= "Orange" 
             TextColor= "White" 
@@ -22,29 +23,32 @@
             HorizontalTextAlignment= "Center"
             VerticalTextAlignment= "Center"/>
 
-            <Button Text= "+ Add Item" 
+            <Button AutomationId="addItemButton"
+            Text= "+ Add Item" 
             TextColor= "Orange" 
             FontSize= "20" Clicked="AddItemButtonClicked"/>
 
-            <SearchBar Text= "Item Search" 
+            <SearchBar 
+             AutomationId="searchItem" Text= "Item Search" 
              BackgroundColor= "Orange" >
             </SearchBar>
 
-            <ListView x:Name="ItemsList" ItemsSource="{Binding AllItems}">
+            <ListView ItemsSource="{Binding AllItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Command="{Binding DeleteCommand}"
+                                <MenuItem AutomationId="deleteOption" Command="{Binding DeleteCommand}"
                                     Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="10,0">
                                     <StackLayout HorizontalOptions="StartAndExpand">
-                                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Description}"/>
+                                        <Label AutomationId="itemNameList" Text="{Binding Name}" FontAttributes="Bold"/>
+                                        <Label AutomationId="itemDescriptionList" Text="{Binding Description}"/>
                                     </StackLayout>
-                                    <Label Text="{Binding BoxNumber}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                    <Label AutomationId="itemBoxNumList" Text="{Binding BoxNumber}" 
+                                           HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

@@ -13,11 +13,13 @@
             HorizontalTextAlignment="Center" Placeholder="ITEM NAME"/>
             <Entry x:Name="itemDescription"
             AutomationId="itemDescription"
-                   Text="{Binding Description}"
+            Text="{Binding Description}"
             HorizontalTextAlignment="Center" Placeholder="DESCRIPTION" HeightRequest="200"/>
             <Entry x:Name="boxNumber" 
             AutomationId="boxNumber"
-                   Text="{Binding BoxNumber}"
+            Text="{Binding BoxNumber}"
+            Keyboard="Numeric"
+            Placeholder="BOX NUMBER"
             HorizontalTextAlignment="Center"/>
             <!--      <Entry x:Name="imagePath"
             AutomationId="imagePath"
