@@ -15,23 +15,23 @@ namespace StoragePal1.Databases {
         public Database() {
             database = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
                 DependencyService.Get<IFilePath>().GetFilePath("StoragePal1.db3"));
-            //database.CreateTable<Users>();
-            //database.CreateTable<Boxes>();
+            database.CreateTable<Users>();
+            database.CreateTable<Boxes>();
             database.CreateTable<Items>();
             //database.CreateTable<Collaboration>();
         }
 
-        //public int Insert(Users users) {
-        //    var user = database.Insert(users);
-        //    database.Commit();
-        //    return user;
-        //}
+        public int Insert(Users users) {
+            var user = database.Insert(users);
+            database.Commit();
+            return user;
+        }
 
-        //public int Insert(Boxes boxes) {
-        //    var box = database.Insert(boxes);
-        //    database.Commit();
-        //    return box;
-        //}
+        public int Insert(Boxes boxes) {
+            var box = database.Insert(boxes);
+            database.Commit();
+            return box;
+        }
 
         public int Insert(Items items) {
             var item = database.Insert(items);
@@ -50,39 +50,39 @@ namespace StoragePal1.Databases {
             return num;
         }
 
-        //public int InsertOrUpdate(Boxes boxes) {
-        //    int num;
-        //    if (database.Table<Boxes>().Any(entry => entry.Id == boxes.Id)) {
-        //        num = database.Update(boxes);
-        //    } else {
-        //        num = database.Insert(boxes);
-        //    }
-        //    database.Commit();
-        //    return num;
-        //}
+        public int InsertOrUpdate(Boxes boxes) {
+            int num;
+            if (database.Table<Boxes>().Any(entry => entry.Id == boxes.Id)) {
+                num = database.Update(boxes);
+            } else {
+                num = database.Insert(boxes);
+            }
+            database.Commit();
+            return num;
+        }
 
-        //public int InsertOrUpdate(Users users) {
-        //    int num;
-        //    if (database.Table<Users>().Any(entry => entry.Id == users.Id)) {
-        //        num = database.Update(users);
-        //    } else {
-        //        num = database.Insert(users);
-        //    }
-        //    database.Commit();
-        //    return num;
-        //}
+        public int InsertOrUpdate(Users users) {
+            int num;
+            if (database.Table<Users>().Any(entry => entry.Id == users.Id)) {
+                num = database.Update(users);
+            } else {
+                num = database.Insert(users);
+            }
+            database.Commit();
+            return num;
+        }
 
-        //public int Delete(Users users) {
-        //    int num;
-        //    num = database.Delete<Users>(users.Id);
-        //    return num;
-        //}
+        public int Delete(Users users) {
+            int num;
+            num = database.Delete<Users>(users.Id);
+            return num;
+        }
 
-        //public int Delete(Boxes boxes) {
-        //    int num;
-        //    num = database.Delete<Boxes>(boxes.Id);
-        //    return num;
-        //}
+        public int Delete(Boxes boxes) {
+            int num;
+            num = database.Delete<Boxes>(boxes.Id);
+            return num;
+        }
 
         public int Delete(Items items) {
             int num;
@@ -90,13 +90,13 @@ namespace StoragePal1.Databases {
             return num;
         }
 
-        //public List<Users> FetchAllUsers() {
-        //    return database.Table<Users>().ToList();
-        //}
+        public List<Users> FetchAllUsers() {
+            return database.Table<Users>().ToList();
+        }
 
-        //public List<Boxes> FetchAllBoxes() {
-        //    return database.Table<Boxes>().ToList();
-        //}
+        public List<Boxes> FetchAllBoxes() {
+            return database.Table<Boxes>().ToList();
+        }
 
         public List<Items> FetchAllItems() {
             return database.Table<Items>().ToList();
@@ -106,13 +106,13 @@ namespace StoragePal1.Databases {
         //    return database.Table<Collaboration>().ToList();
         //}
 
-        //public Users FetchUser(int key) {
-        //    return database.Table<Users>().Where(entry => entry.Id == key).FirstOrDefault();
-        //}
+        public Users FetchUser(int key) {
+            return database.Table<Users>().Where(entry => entry.Id == key).FirstOrDefault();
+        }
 
-        //public Boxes FetchBox(int key) {
-        //    return database.Table<Boxes>().Where(entry => entry.Id == key).FirstOrDefault();
-        //}
+        public Boxes FetchBox(int key) {
+            return database.Table<Boxes>().Where(entry => entry.Id == key).FirstOrDefault();
+        }
 
         public Items FetchItem(int key) {
             return database.Table<Items>().Where(entry => entry.Id == key).FirstOrDefault();

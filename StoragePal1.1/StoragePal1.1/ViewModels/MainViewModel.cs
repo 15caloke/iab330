@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using PCLCrypto;
 
 namespace StoragePal1 {
     public class MainViewModel : BaseViewModel {
-        public Database db; // readonly
+        private readonly Database db;
 
         private string name;
 
@@ -22,6 +23,7 @@ namespace StoragePal1 {
                 OnPropertyChanged();
             }
         }
+
         private string description;
 
         public string Description {
@@ -51,15 +53,79 @@ namespace StoragePal1 {
                 OnPropertyChanged();
             }
         }
-        public ICommand SubmitCommand { set; get; }
-        public ICommand DeleteCommand { set; get; }
-        public MainViewModel() {
-            db = new Database();
-            SubmitCommand = new Command(Submit);
-            DeleteCommand = new Command(Delete);
+
+        // Users
+        private string email;
+
+        public string Email {
+            get { return email; }
+            set {
+                email = value;
+                OnPropertyChanged();
+            }
         }
 
-        public void Submit() {
+        private string password;
+
+        // NEED TO STORE AS A HASH DIGEST
+        public string Password {
+            get { return password; }
+            set {
+                password = value; // May need to check this
+                OnPropertyChanged();
+            }
+        }
+
+        private string username;
+
+        public string Username {
+            get { return username; }
+            set {
+                username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        // Boxes
+        private int number;
+        public int Number {
+            get { return number; }
+            set {
+                number = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string category;
+        public string Category {
+            get { return category; }
+            set {
+                category = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string qrCode;
+        public string QRCode {
+            get { return qrCode; }
+            set {
+                qrCode = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand SubmitItemCommand { set; get; }
+        public ICommand SubmitUserCommand { set; get; }
+        public ICommand SubmitBoxCommand { set; get; }
+
+        public MainViewModel() {
+            db = new Database();
+            SubmitItemCommand = new Command(SubmitItems);
+            SubmitUserCommand = new Command(SubmitUsers);
+            SubmitBoxCommand = new Command(SubmitBox);
+        }
+
+        public void SubmitItems() {
             db.Insert(new Items() {
                 Name = this.Name,
                 Description = Description,
@@ -71,15 +137,40 @@ namespace StoragePal1 {
             BoxNumber = 0;
             ImagePath = String.Empty;
         }
-        public void Delete()
-        {
-            db.Delete(new Items()
-            {
-                Name = this.Name,
-                Description = Description,
-                BoxNumber = BoxNumber,
-                ImagePath = ImagePath
+
+        public void SubmitUsers() {
+            db.Insert(new Users() {
+                Email = Email,
+                Username = Username,
+                Password = CalculateSha1Hash(Email + Password) // email concatenated with password for salt value
             });
+            Email = String.Empty;
+            Username = String.Empty;
+            Password = String.Empty;
+        }
+
+        public void SubmitBox() {
+            db.Insert(new Boxes() {
+                Number = Number,
+                Category = Category,
+                QRCode = QRCode
+            });
+            Number = 0;
+            Category = String.Empty;
+            QRCode = String.Empty;
+        }
+
+        private static string CalculateSha1Hash(string input) {
+            // step 1, calculate MD5 hash from input
+            var hasher = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha1);
+            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+            byte[] hash = hasher.HashData(inputBytes);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++) {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
         }
     }
 }

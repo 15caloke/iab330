@@ -13,14 +13,17 @@ namespace StoragePal1.Models {
         [NotNull]
         public int Id { set; get; }
 
-        [NotNull]
-        public string FirstName { set; get; }
+        //[NotNull]
+        //public string FirstName { set; get; }
 
-        [NotNull]
-        public string LastName { set; get; }
+        //[NotNull]
+        //public string LastName { set; get; }
 
         [NotNull]
         public string Email { set; get; }
+
+        [NotNull]
+        public string Username { set; get; }
 
         [NotNull]
         public string Password { set; get; }

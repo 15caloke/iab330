@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StoragePal1.UserLogInPage"
-    NavigationPage.HasNavigationBar="false"> 
+    NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="30,0">
-        <!-- Logo and images-->
-           <Label Text= "StoragePal" 
+            <!-- Logo and images-->
+            <Label Text= "StoragePal" 
             FontFamily= "Helvetica"
             VerticalTextAlignment= "Center"
             HorizontalTextAlignment= "Center" 
@@ -15,29 +15,33 @@
             VerticalOptions= "EndAndExpand"
             HorizontalOptions="CenterAndExpand"
             TextColor= "Orange"/>
-            
+
             <Image x:Name= "StoragePalButton" Source="SP_Logo_1387.png"
               WidthRequest="150" 
               HeightRequest="150"
               VerticalOptions= "CenterAndExpand"
               HorizontalOptions="CenterAndExpand"/>
-            
-          <!-- User Entries -->  
-            <Entry x:Name="usernameEntry" 
-            Placeholder="Username" 
+
+            <!-- User Entries -->
+            <Entry x:Name="usernameEntry"
+            AutomationId="usernameEntry"
+            Text="{Binding Username}"
+            Placeholder="Username"
             HorizontalTextAlignment="Center" />
-            
-            <Entry x:Name="passwordEntry" 
+
+            <Entry x:Name="passwordEntry"
+            AutomationId="passwordEntry"
+            Text="{Binding Password}"
             Placeholder="Password" 
             IsPassword="true" 
             HorizontalTextAlignment="Center" />
-            
+
             <Button Text="Login" 
             Clicked="TempLoginClicked"/>
-            
+
             <Button Text="New User? Sign Up"
             Clicked="OnSignUpButtonClicked"/>
-            
+
             <Label x:Name="messageLabel" />
         </StackLayout>
     </ContentPage.Content>

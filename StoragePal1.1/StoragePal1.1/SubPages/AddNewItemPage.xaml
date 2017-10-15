@@ -40,7 +40,7 @@
                     <TapGestureRecognizer
                         NumberOfTapsRequired="1"
                         Tapped="TapGestureRecognizer_Tapped"
-                        Command="{Binding SubmitCommand}"
+                        Command="{Binding SubmitItemCommand}"
                          />
                 </Image.GestureRecognizers>
             </Image>

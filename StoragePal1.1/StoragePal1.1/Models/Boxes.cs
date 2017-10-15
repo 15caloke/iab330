@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace StoragePal1.Models {
     public class Boxes {
-        
+
         [PrimaryKey]
         [AutoIncrement]
         [NotNull]
         public int Id { get; set; }
 
-        [ForeignKey(typeof(Users))]
-        [NotNull]
-        public int UserId { get; set; }
+        //[ForeignKey(typeof(Users))]
+        //[NotNull]
+        //public int UserId { get; set; }
 
         [NotNull]
         public int Number { get; set; }
@@ -25,6 +25,6 @@ namespace StoragePal1.Models {
 
         public string QRCode { get; set; }
 
-        public List<Boxes> BoxGroup { get; set; }
+        //public List<Boxes> BoxGroup { get; set; }
     }
 }

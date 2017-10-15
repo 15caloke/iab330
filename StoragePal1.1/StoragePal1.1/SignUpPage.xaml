@@ -3,23 +3,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="StoragePal1.SignUpPage"
     Title="Sign Up">
-    
+
     <ContentPage.Content>
-        
+
         <StackLayout VerticalOptions="CenterAndExpand" Spacing= "10" Padding="30,0">
-           <Image  Source="NewUser_Image.png"
+            <Image  Source="NewUser_Image.png"
               WidthRequest="200" 
               VerticalOptions= "CenterAndExpand"
               HorizontalOptions="CenterAndExpand"/>
             <Label Text="Email address" />
-            <Entry x:Name="emailEntry" />
+            <Entry x:Name="emailEntry" Placeholder="email@example.com" Text="{Binding Email}" AutomationId="email" Keyboard="Email" />
             <Label Text="Username" />
-            <Entry x:Name="usernameEntry"/>
+            <Entry x:Name="usernameEntry" Placeholder="Your Username" Text="{Binding Username}" AutomationId="username"/>
             <Label Text="Password" />
-            <Entry x:Name="passwordEntry" IsPassword="true" />
-            <Button Text="Sign Up"/>
+            <Entry x:Name="passwordEntry" Placeholder="Your Password" Text="{Binding Password}" AutomationId="password" IsPassword="true" />
+            <Button Text="Sign Up" Command="{Binding SubmitUserCommand}" Clicked="OnCreate"/>
             <Label x:Name="messageLabel" />
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>
