@@ -54,7 +54,7 @@ namespace StoragePalTests.ViewModelTests {
             main.BoxNumber = 1;
             main.ImagePath = "C:/test/testing/moreTesting/";
 
-            main.Submit();
+            main.SubmitItems();
 
             Assert.Inconclusive("Need to finish");
         }
