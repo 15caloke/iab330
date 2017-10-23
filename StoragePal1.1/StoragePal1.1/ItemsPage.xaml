@@ -33,14 +33,12 @@
              BackgroundColor= "Orange" >
             </SearchBar>
 
-            <!-- SelectedItem="{Binding SingleItem}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" -->
-
-            <ListView ItemsSource="{Binding AllItems}">
+            <ListView ItemsSource="{Binding AllItems}" SelectedItem="{Binding SingleItem}" IsPullToRefreshEnabled="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem AutomationId="deleteOption" Text="Delete" IsDestructive="True" />
+                                <MenuItem Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" AutomationId="deleteOption" Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="10,0">
