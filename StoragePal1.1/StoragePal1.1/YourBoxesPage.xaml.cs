@@ -8,9 +8,5 @@ namespace StoragePal1 {
         public YourBoxesPage() {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e) {
-            Navigation.PushAsync(new SubPages.AddBoxPage());
-        }
     }
 }

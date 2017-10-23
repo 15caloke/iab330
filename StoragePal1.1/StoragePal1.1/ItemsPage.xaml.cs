@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 
 namespace StoragePal1 {
     public partial class ItemsPage : ContentPage {
-        private readonly Database db;
+        //private readonly Database db;
 
         public ItemsPage() {
             InitializeComponent();
@@ -22,10 +22,14 @@ namespace StoragePal1 {
             BindingContext = new ItemsViewModel();
         }
 
-        private void MenuItem_Clicked(object sender, EventArgs e) {
-            var selectedItem = ((MenuItem)sender).CommandParameter as Items;
-            ((ItemsViewModel)BindingContext).Delete(selectedItem);
-            OnAppearing();
-        }
+        //private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
+        //    // Code to make individual item page
+        //}
+
+        //private void OnDelete(object sender, EventArgs e) {
+        //    var menuItem = ((MenuItem)sender);
+        //    var items = ((ItemsViewModel) menuItem.CommandParameter);
+        //   // items.DeleteCommand;
+        //}
     }
 }

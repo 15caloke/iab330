@@ -67,10 +67,11 @@ namespace StoragePal1 {
 
         private string password;
 
+        // NEED TO STORE AS A HASH DIGEST
         public string Password {
             get { return password; }
             set {
-                password = value;
+                password = value; // May need to check this
                 OnPropertyChanged();
             }
         }
@@ -117,7 +118,6 @@ namespace StoragePal1 {
         public ICommand SubmitUserCommand { set; get; }
         public ICommand SubmitBoxCommand { set; get; }
 
-
         public MainViewModel() {
             db = new Database();
             SubmitItemCommand = new Command(SubmitItems);
@@ -126,23 +126,16 @@ namespace StoragePal1 {
         }
 
         public void SubmitItems() {
-            if (this.BoxNumber <= 0 || this.BoxNumber > 100) { // modify number
-                                                               //throw new EntryOutOfRangeException("Number is not valid, please re-enter an appropriate number");
-                Label lbl = new Label {
-                    Text = "Cannot have excessive or illigitimate box numbers"
-                };
-            } else {
-                db.Insert(new Items() {
-                    Name = this.Name,
-                    Description = this.Description,
-                    BoxNumber = this.BoxNumber,
-                    ImagePath = this.ImagePath
-                });
-                Name = String.Empty;
-                Description = String.Empty;
-                BoxNumber = 0;
-                ImagePath = String.Empty;
-            }
+            db.Insert(new Items() {
+                Name = this.Name,
+                Description = Description,
+                BoxNumber = BoxNumber,
+                ImagePath = ImagePath
+            });
+            Name = String.Empty;
+            Description = String.Empty;
+            BoxNumber = 0;
+            ImagePath = String.Empty;
         }
 
         public void SubmitUsers() {

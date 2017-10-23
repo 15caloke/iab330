@@ -19,44 +19,35 @@ namespace StoragePalTests.ViewModelTests {
 
         [SetUp]
         public void SetUp() {
-            //main = new MainViewModel {
-            //    Name = "Test",
-            //    Description = "just testing",
-            //    BoxNumber = 2,
-            //    ImagePath = "C:/TestDir/SecondDir/ThirdDir/"
-            //};
-            //items = new ItemsViewModel();
+            main = new MainViewModel {
+                Name = "Test",
+                Description = "just testing",
+                BoxNumber = 2,
+                ImagePath = "C:/TestDir/SecondDir/ThirdDir/"
+            };
+            items = new ItemsViewModel();
         }
 
-        /*
-         * 
-         * The following cannot be tested due to the dependancy injection,
-         * testing will be done manually on the report, as unit tests will
-         * not be required for marking, so test will remain inconclusive
-         * 
-         */
         [Test]
         public void TestModelIsNotNull() {
-            //Assert.NotNull(items);
-            Assert.Inconclusive("Cannot be tested");
+            Assert.NotNull(items);
         }
 
         [Test]
         public void TestNotInstanciatedIsNull() {
-            //Assert.Null(notInstanciated);
-            Assert.Inconclusive("Cannot be tested");
+            Assert.Null(notInstanciated);
         }
 
         [Test]
         public void TestModelRetrievesData() {
-            //foreach (Items item in items.AllItems) {
-            //    Assert.AreEqual(1, item.Id);
-            //    Assert.AreEqual("Test", item.Name);
-            //    Assert.AreEqual("just testing", item.Description);
-            //    Assert.AreEqual(2, item.BoxNumber);
-            //    Assert.AreEqual("C:/TestDir/SecondDir/ThirdDir/", item.ImagePath);
-            Assert.Inconclusive("Cannot be tested");
+            foreach (Items item in items.AllItems) {
+                Assert.AreEqual(1, item.Id);
+                Assert.AreEqual("Test", item.Name);
+                Assert.AreEqual("just testing", item.Description);
+                Assert.AreEqual(2, item.BoxNumber);
+                Assert.AreEqual("C:/TestDir/SecondDir/ThirdDir/", item.ImagePath);
+            }
         }
-    }
 
+    }
 }
