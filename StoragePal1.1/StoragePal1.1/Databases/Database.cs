@@ -84,9 +84,10 @@ namespace StoragePal1.Databases {
             return num;
         }
 
-        public int Delete(Items items) {
+        public int Delete(int id) {
             int num;
-            num = database.Delete<Items>(items.Id);
+            num = database.Delete<Items>(id);
+            database.Commit();
             return num;
         }
 

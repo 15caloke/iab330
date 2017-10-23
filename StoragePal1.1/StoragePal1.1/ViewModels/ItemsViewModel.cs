@@ -14,7 +14,7 @@ namespace StoragePal1 {
     public class ItemsViewModel : BaseViewModel {
         private readonly Database db;
         private ObservableCollection<Items> items;
-        //private Items selectedItem;
+        private Items selectedItem;
 
         public ObservableCollection<Items> AllItems {
             get { return items; }
@@ -24,26 +24,22 @@ namespace StoragePal1 {
             }
         }
 
-        //public Items SingleItem {
-        //    get { return selectedItem; }
-        //    set {
-        //        selectedItem = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
-        //public ICommand DeleteCommand { get; set; }
+        public Items SingleItem {
+            get { return selectedItem; }
+            set {
+                selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ItemsViewModel() {
             db = new Database();
             AllItems = new ObservableCollection<Items>(db.FetchAllItems());
-            //SingleItem = new Items();
-            //DeleteCommand = new Command(Delete);
         }
 
-        //public void Delete() {
-        //    db.Delete(selectedItem);    
-        //}
+        public void Delete(Items item) {
+            db.Delete(item.Id);
+        }
     }
 }
 
