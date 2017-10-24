@@ -116,6 +116,7 @@ namespace StoragePal1 {
         public ICommand SubmitItemCommand { set; get; }
         public ICommand SubmitUserCommand { set; get; }
         public ICommand SubmitBoxCommand { set; get; }
+        public ICommand ValidateUserCommand { set; get; }
 
 
         public MainViewModel() {
@@ -123,6 +124,7 @@ namespace StoragePal1 {
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
+            //ValidateUserCommand = new Command(ValidateUser);
         }
 
         public void SubmitItems() {
@@ -149,11 +151,24 @@ namespace StoragePal1 {
             db.Insert(new Users() {
                 Email = Email,
                 Username = Username,
-                Password = CalculateSha1Hash(Email + Password) // email concatenated with password for salt value
+                Password = CalculateSha1Hash(Username + Password) // email concatenated with password for salt value
             });
             Email = String.Empty;
             Username = String.Empty;
             Password = String.Empty;
+        }
+
+        public bool ValidateUser(string username, string password) {
+            bool isValidated = false;
+            foreach (Users x in db.FetchAllUsers()) {
+                if (x.Username == username && x.Password == CalculateSha1Hash(username + password)) {
+                    isValidated = true;
+                    break;
+                } else {
+                    isValidated = false;
+                }
+            }
+            return isValidated;
         }
 
         public void SubmitBox() {

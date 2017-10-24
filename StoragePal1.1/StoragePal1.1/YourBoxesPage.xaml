@@ -14,12 +14,7 @@
             FontSize= "30"
             HorizontalTextAlignment= "Center"
             VerticalTextAlignment= "Center"/>
-            <Picker Title= "Your Boxes">
-                <Picker.Items>
-                    <x:String>Box 1</x:String>
-                    <x:String>Box 2</x:String>
-                </Picker.Items>
-            </Picker>
+            <Picker x:Name="thePicker" Title= "Your Boxes"/>
             <ListView x:Name="ItemsList" 
          IsPullToRefreshEnabled= "true" HeightRequest="10">
             </ListView>
