@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace StoragePal1.SubPages {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddBoxPage : ContentPage {
         public AddBoxPage() {
             InitializeComponent();
