@@ -28,6 +28,8 @@
             <Entry x:Name="usernameEntry" Placeholder="Your Username" Text="{Binding Username}" AutomationId="username"/>
             <Label Text="Password" />
             <Entry x:Name="passwordEntry" Placeholder="Your Password" Text="{Binding Password}" AutomationId="password" IsPassword="true" />
+            <Label Text="Re-Enter Password" />
+            <Entry x:Name="rePasswordEntry" Placeholder="Your Password"  AutomationId="rePassword" IsPassword="true" />
             <Button Text="Sign Up" Clicked="OnCreate"/>
             <Label x:Name="messageLabel" />
         </StackLayout>

@@ -67,3 +67,4 @@ D:\iab330\StoragePal1.1\StoragePal1.1\bin\Debug\AWSSDK.CognitoSync.xml
 D:\iab330\StoragePal1.1\StoragePal1.1\bin\Debug\Newtonsoft.Json.xml
 D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.dll
 D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.pdb
+D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.csprojResolveAssemblyReference.cache

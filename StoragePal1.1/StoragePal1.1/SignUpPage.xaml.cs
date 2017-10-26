@@ -21,17 +21,19 @@ namespace StoragePal1 {
             string currentEmail = emailEntry.Text;
             if (!Validation.Validation.ValidEmail(emailEntry.Text)) {
                 invalidMessage.Text = "Please enter a valid email address";
-            } else if (!Validation.Validation.ValidUsername(usernameEntry.Text)){
-                invalidMessage.Text = "A username must contains at least 6 characters, no special characters allowed";
-
+            } else if (!Validation.Validation.ValidUsername(usernameEntry.Text)) {
+                invalidMessage.Text = "A username must contain 6-20 characters, no special characters allowed";
+            } else if (!Validation.Validation.ValidPassword(passwordEntry.Text)){
+                invalidMessage.Text = "Minimum eight characters, at least one uppercase letter, one lowercase letter and one number are required for password";
             } else {
                 if (!((MainViewModel)BindingContext).ValidateEmail(emailEntry.Text)) {
                     invalidMessage.Text = "The email already exists";
                 }
                 else if (!((MainViewModel)BindingContext).ValidateUsername(usernameEntry.Text)) {
                     invalidMessage.Text = "The username already exists";
-                }
-                else {
+                } else if (rePasswordEntry.Text != passwordEntry.Text) {
+                    invalidMessage.Text = "Please re-enter your password correctly";
+                } else {
                     ((MainViewModel)BindingContext).CreateUser(emailEntry.Text, usernameEntry.Text, passwordEntry.Text);
                     Navigation.PopAsync(true);
                 }
