@@ -12,14 +12,29 @@ namespace StoragePal1 {
         public SignUpPage() {
             InitializeComponent();
             BindingContext = new MainViewModel();
+            invalidMessage.Text = "";
+
         }
 
         private void OnCreate(object sender, EventArgs e) {
-            if (((MainViewModel)BindingContext).ValidateSignup(emailEntry.Text, usernameEntry.Text)) {
-                ((MainViewModel)BindingContext).CreateUser(emailEntry.Text, usernameEntry.Text, passwordEntry.Text);
-                Navigation.PopAsync(true);
+            invalidMessage.Text = "";
+            string currentEmail = emailEntry.Text;
+            if (!Validation.Validation.ValidEmail(emailEntry.Text)) {
+                invalidMessage.Text = "Please enter a valid email address";
+            } else if (!Validation.Validation.ValidUsername(usernameEntry.Text)){
+                invalidMessage.Text = "A username must contains at least 6 characters, no special characters allowed";
+
             } else {
-                emailEntry.Text = "Username and/or Email has already taken";
+                if (!((MainViewModel)BindingContext).ValidateEmail(emailEntry.Text)) {
+                    invalidMessage.Text = "The email already exists";
+                }
+                else if (!((MainViewModel)BindingContext).ValidateUsername(usernameEntry.Text)) {
+                    invalidMessage.Text = "The username already exists";
+                }
+                else {
+                    ((MainViewModel)BindingContext).CreateUser(emailEntry.Text, usernameEntry.Text, passwordEntry.Text);
+                    Navigation.PopAsync(true);
+                }
             }
         }
     }

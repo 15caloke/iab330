@@ -11,8 +11,7 @@
 namespace StoragePal1 {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/MovingPage.xa" +
-        "ml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\iab330\\StoragePal1.1\\StoragePal1.1\\MovingPage.xaml")]
     public partial class MovingPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -11,8 +11,7 @@
 namespace StoragePal1.SubPages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\calum\\Documents\\GitHub\\iab330\\StoragePal1.1\\StoragePal1.1\\SubPages\\AddNe" +
-        "wItemPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\iab330\\StoragePal1.1\\StoragePal1.1\\SubPages\\AddNewItemPage.xaml")]
     public partial class AddNewItemPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

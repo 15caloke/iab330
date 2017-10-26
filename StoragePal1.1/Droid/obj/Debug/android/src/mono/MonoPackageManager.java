@@ -100,8 +100,16 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "StoragePal1.1.Droid.dll" comes first in this list. */
 		"StoragePal1.1.Droid.dll",
 		"FormsViewGroup.dll",
+		"nunit.framework.dll",
+		"PCLCrypto.dll",
+		"PInvoke.BCrypt.dll",
+		"PInvoke.Kernel32.dll",
+		"PInvoke.NCrypt.dll",
+		"PInvoke.Windows.Core.dll",
 		"SQLite.Net.dll",
 		"SQLite.Net.Platform.XamarinAndroid.dll",
+		"System.Runtime.Loader.dll",
+		"Validation.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",
@@ -120,5 +128,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_25";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_23";
 }

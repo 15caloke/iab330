@@ -21,7 +21,17 @@
               HeightRequest="150"
               VerticalOptions= "CenterAndExpand"
               HorizontalOptions="CenterAndExpand"/>
-
+            <Label  x:Name= "ErrorMessage"
+            Text= "" 
+            FontFamily= "Helvetica"
+            VerticalTextAlignment= "Center"
+            HorizontalTextAlignment= "Center" 
+            Font= "Bold" 
+            FontSize= "20"
+            VerticalOptions= "EndAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            TextColor= "Red"/>
+            
             <!-- User Entries -->
             <Entry x:Name="usernameEntry"
             AutomationId="usernameEntry"

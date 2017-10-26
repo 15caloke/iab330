@@ -163,29 +163,40 @@ namespace StoragePal1 {
         }
 
         public bool ValidateUser(string username, string password) {
-            bool isValidated = false;
-            foreach (Users x in db.FetchAllUsers()) {
+           bool isValidated = true;
+           foreach (Users x in db.FetchAllUsers()) {
                 if (x.Username == username && x.Password == CalculateSha1Hash(username + password)) {
-                    isValidated = true;
+                  isValidated = true;
                     break;
-                } else {
-                    isValidated = false;
-                }
-            }
+               } else {
+                   isValidated = false;
+               }
+           }
             return isValidated;
         }
 
-        public bool ValidateSignup(string email, string username) {
-            bool isValid = false;
-            foreach (Users user in db.FetchAllUsers()) {
-                if (email != user.Email && username != user.Username) { // may need to change to || ?
-                    isValid = true;
-                } else {
-                    isValid = false;
+
+        public bool ValidateEmail(string email){
+            foreach (Users user in db.FetchAllUsers()){
+                if( email == user.Email) {
+                    return false;
                 }
             }
-            return isValid;
+                return true;
+
         }
+        public bool ValidateUsername(string username) {
+            foreach (Users user in db.FetchAllUsers()) {
+                if (username == user.Username) {
+                    return false;
+                }
+            }
+            return true;
+
+        }
+
+
+
 
         public void CreateUser(string email, string username, string password) {
             db.Insert(new Users() {

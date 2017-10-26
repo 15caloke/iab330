@@ -11,8 +11,7 @@
 namespace StoragePal1.SubPages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\calum\\Documents\\GitHub\\iab330\\StoragePal1.1\\StoragePal1.1\\SubPages\\ViewS" +
-        "ingleBoxPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\iab330\\StoragePal1.1\\StoragePal1.1\\SubPages\\ViewSingleBoxPage.xaml")]
     public partial class ViewSingleBoxPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

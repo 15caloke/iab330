@@ -11,7 +11,7 @@
 namespace StoragePal1 {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/jedriggs/Projects/StoragePal1.1/StoragePal1.1/SearchPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\iab330\\StoragePal1.1\\StoragePal1.1\\SearchPage.xaml")]
     public partial class SearchPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -4,6 +4,17 @@
         <name>PCLCrypto</name>
     </assembly>
     <members>
+        <member name="T:PCLCrypto.NotImplementedByReferenceAssemblyException">
+            <summary>
+            An exception thrown from the PCLCrypto reference assembly when it is called
+            instead of a platform-specific assembly at runtime.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.NotImplementedByReferenceAssemblyException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PCLCrypto.NotImplementedByReferenceAssemblyException"/> class.
+            </summary>
+        </member>
         <member name="T:PCLCrypto.AsymmetricAlgorithm">
             <summary>
             Asymmetric algorithms supported by some or all platforms.
@@ -97,6 +108,104 @@
         <member name="F:PCLCrypto.AsymmetricAlgorithm.RsaSignPssSha512">
             <summary>
             RsaSignPssSha512 algorithm.
+            </summary>
+        </member>
+        <member name="T:PCLCrypto.AsymmetricAlgorithmExtensions">
+            <summary>
+            Extension methods for the <see cref="T:PCLCrypto.AsymmetricAlgorithm"/> type.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.AsymmetricAlgorithmExtensions.GetName(PCLCrypto.AsymmetricAlgorithm)">
+            <summary>
+            Gets the simple name of an asymmetric algorithm.
+            </summary>
+            <param name="algorithm">The algorithm.</param>
+            <returns>The name of the algorithm.</returns>
+        </member>
+        <member name="M:PCLCrypto.AsymmetricAlgorithmExtensions.GetSignaturePadding(PCLCrypto.AsymmetricAlgorithm)">
+            <summary>
+            Gets the padding used for the specified asymmetric signing algorithm.
+            </summary>
+            <param name="algorithm">The signing algorithm.</param>
+            <returns>The signature padding used, if applicable.</returns>
+        </member>
+        <member name="M:PCLCrypto.AsymmetricAlgorithmExtensions.GetEncryptionPadding(PCLCrypto.AsymmetricAlgorithm)">
+            <summary>
+            Gets the padding used for the specified asymmetric encryption algorithm.
+            </summary>
+            <param name="algorithm">The encryption algorithm.</param>
+            <returns>The encryption padding used, if applicable.</returns>
+        </member>
+        <member name="M:PCLCrypto.AsymmetricAlgorithmExtensions.GetHashAlgorithm(PCLCrypto.AsymmetricAlgorithm)">
+            <summary>
+            Gets the hash algorithm utilized by the specified asymmetric algorithm.
+            </summary>
+            <param name="algorithm">The asymmetric algorithm.</param>
+            <returns>The hash algorithm, if applicable.</returns>
+        </member>
+        <member name="T:PCLCrypto.AsymmetricAlgorithmName">
+            <summary>
+            The simple names of asymmetric algorithms.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricAlgorithmName.Dsa">
+            <summary>
+            Digital signing algorithm.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricAlgorithmName.Ecdsa">
+            <summary>
+            Elliptic curve digital signing algorithm.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricAlgorithmName.Rsa">
+            <summary>
+            RSA encryption.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricAlgorithmName.RsaSign">
+            <summary>
+            RSA signature.
+            </summary>
+        </member>
+        <member name="T:PCLCrypto.AsymmetricEncryptionPadding">
+            <summary>
+            A PCL-compatible enumeration describing asymmetric encryption padding options.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricEncryptionPadding.None">
+            <summary>
+            No padding at all.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricEncryptionPadding.Pkcs1">
+            <summary>
+            The data will be padded with a random number to round out the block size.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricEncryptionPadding.Oaep">
+            <summary>
+            Use Optimal Asymmetric Encryption Padding (OAEP).
+            </summary>
+        </member>
+        <member name="T:PCLCrypto.AsymmetricSignaturePadding">
+            <summary>
+            A PCL-compatible enumeration describing asymmetric signing padding options.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricSignaturePadding.None">
+            <summary>
+            No padding at all.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricSignaturePadding.Pkcs1">
+            <summary>
+            The data will be padded with a random number to round out the block size.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.AsymmetricSignaturePadding.Pss">
+            <summary>
+            Probabilistic Signature Scheme (PSS)
             </summary>
         </member>
         <member name="T:PCLCrypto.CryptographicHash">
@@ -212,6 +321,11 @@
         <member name="F:PCLCrypto.CryptographicPrivateKeyBlobType.BCryptPrivateKey">
             <summary>
             Microsoft private key format defined by Cryptography API: Next Generation (CNG).
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.CryptographicPrivateKeyBlobType.BCryptFullPrivateKey">
+            <summary>
+            Microsoft full private key format defined by Cryptography API: Next Generation (CNG).
             </summary>
         </member>
         <member name="F:PCLCrypto.CryptographicPrivateKeyBlobType.Capi1PrivateKey">
@@ -437,6 +551,11 @@
             Gets the asymmetric algorithm this provider manages keys for.
             </summary>
         </member>
+        <member name="P:PCLCrypto.IAsymmetricKeyAlgorithmProvider.LegalKeySizes">
+            <summary>
+            Gets the allowed key sizes.
+            </summary>
+        </member>
         <member name="M:PCLCrypto.IAsymmetricKeyAlgorithmProvider.CreateKeyPair(System.Int32)">
             <summary>
             Creates a new cryptographic key.
@@ -564,7 +683,7 @@
             Hexadecimal encoded output string.
             </returns>
         </member>
-        <member name="M:PCLCrypto.ICryptographicBuffer.GenerateRandom(System.UInt32)">
+        <member name="M:PCLCrypto.ICryptographicBuffer.GenerateRandom(System.Int32)">
             <summary>
             Creates a buffer that contains random data.
             </summary>
@@ -693,7 +812,7 @@
             <param name="key">The symmetric or secret key used for derivation.</param>
             <param name="parameters">Derivation parameters. The parameters vary depending on the type of KDF algorithm
             used.</param>
-            <param name="desiredKeySize">Requested size, in bits, of the derived key.</param>
+            <param name="desiredKeySize">Requested size, in bytes, of the derived key.</param>
             <returns>
             Buffer that contains the derived key.
             </returns>
@@ -803,6 +922,65 @@
             <param name="iterations">The rounds of computation to use in deriving a stronger key. The larger this is, the longer attacks will take.</param>
             <param name="countBytes">The desired key size in bytes.</param>
             <returns>The generated key.</returns>
+        </member>
+        <member name="T:PCLCrypto.IECDiffieHellman">
+            <summary>
+            Provides functionality for the ECDiffieHellman algorithm.
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.IECDiffieHellman.KeySize">
+            <summary>
+            Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
+            </summary>
+            <value>The size, in bits, of the key modulus used by the asymmetric algorithm.</value>
+        </member>
+        <member name="P:PCLCrypto.IECDiffieHellman.PublicKey">
+            <summary>
+            Gets the public key to share with the other party in order to establish a shared secret.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.IECDiffieHellman.DeriveKeyMaterial(PCLCrypto.IECDiffieHellmanPublicKey)">
+            <summary>
+            Derives bytes that can be used as a key, given another party's public key.
+            </summary>
+            <param name="otherParty">The other party's public key.</param>
+            <returns>The key material from the key exchange with the other party’s public key.</returns>
+        </member>
+        <member name="T:PCLCrypto.IECDiffieHellmanCngPublicKeyFactory">
+            <summary>
+            A factory for <see cref="T:PCLCrypto.IECDiffieHellmanPublicKey"/> instances.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.IECDiffieHellmanCngPublicKeyFactory.FromByteArray(System.Byte[])">
+            <summary>
+            Deserializes an <see cref="T:PCLCrypto.IECDiffieHellmanPublicKey"/> from a byte array.
+            </summary>
+            <param name="publicKey">A public key (presumably from the other party).</param>
+            <returns>An instance of <see cref="T:PCLCrypto.IECDiffieHellmanPublicKey"/>.</returns>
+        </member>
+        <member name="T:PCLCrypto.IECDiffieHellmanFactory">
+            <summary>
+            A factory for instances of <see cref="T:PCLCrypto.IECDiffieHellman"/>.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.IECDiffieHellmanFactory.Create">
+            <summary>
+            Creates an instance of an <see cref="T:PCLCrypto.IECDiffieHellman"/>
+            with a new key.
+            </summary>
+            <returns>An instance of <see cref="T:PCLCrypto.IECDiffieHellman"/>.</returns>
+        </member>
+        <member name="T:PCLCrypto.IECDiffieHellmanPublicKey">
+            <summary>
+            Provides access to the public key used as part of an instance
+            of <see cref="T:PCLCrypto.IECDiffieHellman"/>.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.IECDiffieHellmanPublicKey.ToByteArray">
+            <summary>
+            Serializes the ECDiffieHellmanPublicKey key BLOB to a byte array.
+            </summary>
+            <returns>A byte array.</returns>
         </member>
         <member name="T:PCLCrypto.IHashAlgorithmProvider">
             <summary>
@@ -1013,6 +1191,26 @@
             </summary>
             <value>Block size.</value>
         </member>
+        <member name="P:PCLCrypto.ISymmetricKeyAlgorithmProvider.LegalKeySizes">
+            <summary>
+            Gets the allowed key sizes.
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.ISymmetricKeyAlgorithmProvider.Name">
+            <summary>
+            Gets the algorithm used in this algorithm.
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.ISymmetricKeyAlgorithmProvider.Mode">
+            <summary>
+            Gets the mode used in this algorithm.
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.ISymmetricKeyAlgorithmProvider.Padding">
+            <summary>
+            Gets the padding used in this algorithm.
+            </summary>
+        </member>
         <member name="M:PCLCrypto.ISymmetricKeyAlgorithmProvider.CreateSymmetricKey(System.Byte[])">
             <summary>
             Creates a symmetric key.
@@ -1029,11 +1227,13 @@
             that serve a specific algorithm.
             </summary>
         </member>
-        <member name="M:PCLCrypto.ISymmetricKeyAlgorithmProviderFactory.OpenAlgorithm(PCLCrypto.SymmetricAlgorithm)">
+        <member name="M:PCLCrypto.ISymmetricKeyAlgorithmProviderFactory.OpenAlgorithm(PCLCrypto.SymmetricAlgorithmName,PCLCrypto.SymmetricAlgorithmMode,PCLCrypto.SymmetricAlgorithmPadding)">
             <summary>
             Returns a crypto key management for a specified algorithm.
             </summary>
-            <param name="algorithm">The algorithm.</param>
+            <param name="name">The name of the base algorithm to use.</param>
+            <param name="mode">The algorithm's mode (i.e. streaming or some block mode).</param>
+            <param name="padding">The padding to use.</param>
             <returns>An instance of <see cref="T:PCLCrypto.ISymmetricKeyAlgorithmProvider"/>.</returns>
         </member>
         <member name="T:PCLCrypto.KeyDerivationAlgorithm">
@@ -1116,6 +1316,41 @@
             The Sp80056aConcatSha512 algorithm.
             </summary>
         </member>
+        <member name="T:PCLCrypto.KeySizes">
+            <summary>
+            Describes a range of valid key sizes.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.KeySizes.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PCLCrypto.KeySizes"/> struct.
+            </summary>
+            <param name="minSize">The minimum key size (in bits).</param>
+            <param name="maxSize">The maximum key size (in bits).</param>
+            <param name="stepSize">The increment (in bits) between valid key sizes between <paramref name="minSize"/> and <paramref name="maxSize"/>.</param>
+        </member>
+        <member name="P:PCLCrypto.KeySizes.MaxSize">
+            <summary>
+            Gets the maximum key size (in bits).
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.KeySizes.MinSize">
+            <summary>
+            Gets the minimum key size (in bits).
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.KeySizes.StepSize">
+            <summary>
+            Gets the step interval (in bits) between valid key sizes in the range of
+            <see cref="P:PCLCrypto.KeySizes.MinSize"/> to <see cref="P:PCLCrypto.KeySizes.MaxSize"/>.
+            </summary>
+        </member>
+        <member name="M:PCLCrypto.KeySizes.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:PCLCrypto.KeySizes.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
         <member name="T:PCLCrypto.MacAlgorithm">
             <summary>
             MAC algorithms available on the various platforms.
@@ -1166,52 +1401,65 @@
             Gets tools to derive a key from a password for buffer.
             </summary>
         </member>
+        <member name="P:PCLCrypto.NetFxCrypto.ECDiffieHellman">
+            <summary>
+            Gets the factory for <see cref="T:PCLCrypto.IECDiffieHellman"/> instances.
+            </summary>
+        </member>
+        <member name="P:PCLCrypto.NetFxCrypto.ECDiffieHellmanCngPublicKey">
+            <summary>
+            Gets the factory for <see cref="T:PCLCrypto.IECDiffieHellmanPublicKey"/> instances.
+            </summary>
+        </member>
         <member name="T:PCLCrypto.RSAParameters">
             <summary>
             Represents the standard parameters for the RSA algorithm.
             </summary>
+            <remarks>
+            All integers are encoded in big endian.
+            </remarks>
         </member>
         <member name="F:PCLCrypto.RSAParameters.D">
             <summary>
-            Represents the D parameter for the System.Security.Cryptography.RSA algorithm.
+            Represents the private exponent parameter for the System.Security.Cryptography.RSA algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.DP">
             <summary>
-            Represents the DP parameter for the System.Security.Cryptography.RSA algorithm.
+            Represents the exponent1 parameter for the System.Security.Cryptography.RSA algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.DQ">
             <summary>
-            Represents the DQ parameter for the System.Security.Cryptography.RSA algorithm.
+            Represents the exponent2 parameter for the System.Security.Cryptography.RSA algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.Exponent">
             <summary>
-            Represents the Exponent parameter for the System.Security.Cryptography.RSA
+            Represents the publicExponent parameter for the System.Security.Cryptography.RSA
             algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.InverseQ">
             <summary>
-            Represents the InverseQ parameter for the System.Security.Cryptography.RSA
+            Represents the coefficient parameter for the System.Security.Cryptography.RSA
             algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.Modulus">
             <summary>
-            Represents the Modulus parameter for the System.Security.Cryptography.RSA
+            Represents the modulus parameter for the System.Security.Cryptography.RSA
             algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.P">
             <summary>
-            Represents the P parameter for the System.Security.Cryptography.RSA algorithm.
+            Represents the prime1 parameter for the System.Security.Cryptography.RSA algorithm.
             </summary>
         </member>
         <member name="F:PCLCrypto.RSAParameters.Q">
             <summary>
-            Represents the Q parameter for the System.Security.Cryptography.RSA algorithm.
+            Represents the prime2 parameter for the System.Security.Cryptography.RSA algorithm.
             </summary>
         </member>
         <member name="T:PCLCrypto.SymmetricAlgorithm">
@@ -1326,6 +1574,27 @@
             <param name="algorithm">The algorithm to check.</param>
             <returns><c>true</c> if the cipher is a block cipher; <c>false</c> otherwise.</returns>
         </member>
+        <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.IsBlockCipher(PCLCrypto.SymmetricAlgorithmName)">
+            <summary>
+            Gets a value indicating whether the specified algorithm is implemented by a block cipher.
+            </summary>
+            <param name="algorithm">The algorithm to check.</param>
+            <returns><c>true</c> if the cipher is a block cipher; <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.IsBlockCipher(PCLCrypto.SymmetricAlgorithmMode)">
+            <summary>
+            Gets a value indicating whether the specified mode is implemented by a block cipher.
+            </summary>
+            <param name="mode">The mode to check.</param>
+            <returns><c>true</c> if the cipher is a block cipher; <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.IsAuthenticated(PCLCrypto.SymmetricAlgorithmMode)">
+            <summary>
+            Gets a value indicating whether the specified mode offers authentication.
+            </summary>
+            <param name="mode">The mode to check.</param>
+            <returns><c>true</c> if the cipher is an authenticating block mode cipher; <c>false</c> otherwise.</returns>
+        </member>
         <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.GetName(PCLCrypto.SymmetricAlgorithm)">
             <summary>
             Returns a platform-specific algorithm that conforms to the prescribed platform-neutral algorithm.
@@ -1348,6 +1617,16 @@
             </summary>
             <param name="algorithm">The algorithm.</param>
             <returns>The padding.</returns>
+        </member>
+        <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.TryAssemblyAlgorithm(PCLCrypto.SymmetricAlgorithmName,PCLCrypto.SymmetricAlgorithmMode,PCLCrypto.SymmetricAlgorithmPadding,PCLCrypto.SymmetricAlgorithm@)">
+            <summary>
+            Finds a composite <see cref="T:PCLCrypto.SymmetricAlgorithm"/> for the specified unit parts, if one exists.
+            </summary>
+            <param name="name">The name of the base algorithm to use.</param>
+            <param name="mode">The algorithm's mode (i.e. streaming or some block mode).</param>
+            <param name="padding">The padding to use.</param>
+            <param name="algorithm">Receives the composite algorithm enum value, if one exists.</param>
+            <returns><c>true</c> if a match was found; otherwise <c>false</c>.</returns>
         </member>
         <member name="M:PCLCrypto.SymmetricAlgorithmExtensions.UsesIV(PCLCrypto.SymmetricAlgorithmMode)">
             <summary>
@@ -1372,7 +1651,12 @@
         </member>
         <member name="T:PCLCrypto.SymmetricAlgorithmMode">
             <summary>
-            A PCL-compatible enumeration describing symmetric cipher block modes.
+            A PCL-compatible enumeration describing symmetric cipher modes.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.SymmetricAlgorithmMode.Streaming">
+            <summary>
+            The algorithm is a streaming cipher rather than a block cipher.
             </summary>
         </member>
         <member name="F:PCLCrypto.SymmetricAlgorithmMode.Cbc">
@@ -1387,12 +1671,14 @@
         </member>
         <member name="F:PCLCrypto.SymmetricAlgorithmMode.Ccm">
             <summary>
-            The CCM mode.
+            Counter with CBC-MAC.
+            It is an authenticated encryption algorithm designed to provide both authentication and confidentiality. CCM mode is only defined for block ciphers with a block length of 128 bits.
             </summary>
         </member>
         <member name="F:PCLCrypto.SymmetricAlgorithmMode.Gcm">
             <summary>
-            The GCM mode.
+            Galois/Counter Mode.
+            An authenticated encryption algorithm designed to provide both data authenticity (integrity) and confidentiality. GCM is defined for block ciphers with a block size of 128 bits.
             </summary>
         </member>
         <member name="T:PCLCrypto.SymmetricAlgorithmName">
@@ -1437,7 +1723,12 @@
         </member>
         <member name="F:PCLCrypto.SymmetricAlgorithmPadding.PKCS7">
             <summary>
-            Use PKCS7 padding.
+            The PKCS #7 padding string consists of a sequence of bytes, each of which is equal to the total number of padding bytes added.
+            </summary>
+        </member>
+        <member name="F:PCLCrypto.SymmetricAlgorithmPadding.Zeros">
+            <summary>
+            The padding string consists of bytes set to zero.
             </summary>
         </member>
         <member name="T:PCLCrypto.WinRTCrypto">
@@ -1505,6 +1796,14 @@
             <param name="key">The cryptographic key.</param>
             <param name="includePrivateParameters"><c>true</c> to include the private key in the exported parameters; <c>false</c> to only include the public key.</param>
             <returns>The RSA parameters for the key.</returns>
+        </member>
+        <member name="M:PCLCrypto.WinRTExtensions.OpenAlgorithm(PCLCrypto.ISymmetricKeyAlgorithmProviderFactory,PCLCrypto.SymmetricAlgorithm)">
+            <summary>
+            Returns a crypto key management for a specified algorithm.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="algorithm">The algorithm.</param>
+            <returns>An instance of <see cref="T:PCLCrypto.ISymmetricKeyAlgorithmProvider"/>.</returns>
         </member>
     </members>
 </doc>
