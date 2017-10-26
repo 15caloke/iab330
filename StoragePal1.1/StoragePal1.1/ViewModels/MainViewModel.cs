@@ -118,18 +118,18 @@ namespace StoragePal1 {
         public ICommand SubmitBoxCommand { set; get; }
         public ICommand ValidateUserCommand { set; get; }
 
+        public ICommand UpdateSelectedItemCommand { set; get; }
+
 
         public MainViewModel() {
             db = new Database();
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
-            //ValidateUserCommand = new Command(ValidateUser);
         }
 
         public void SubmitItems() {
             if (this.BoxNumber <= 0 || this.BoxNumber > 100) { // modify number
-                                                               //throw new EntryOutOfRangeException("Number is not valid, please re-enter an appropriate number");
                 Label lbl = new Label {
                     Text = "Cannot have excessive or illigitimate box numbers"
                 };
@@ -145,6 +145,10 @@ namespace StoragePal1 {
                 BoxNumber = 0;
                 ImagePath = String.Empty;
             }
+        }
+
+        public void UpdateTheItem(Items item) {
+            db.InsertOrUpdate(item.Id);
         }
 
         public void SubmitUsers() {
@@ -169,6 +173,26 @@ namespace StoragePal1 {
                 }
             }
             return isValidated;
+        }
+
+        public bool ValidateSignup(string email, string username) {
+            bool isValid = false;
+            foreach (Users user in db.FetchAllUsers()) {
+                if (email != user.Email && username != user.Username) { // may need to change to || ?
+                    isValid = true;
+                } else {
+                    isValid = false;
+                }
+            }
+            return isValid;
+        }
+
+        public void CreateUser(string email, string username, string password) {
+            db.Insert(new Users() {
+                Email = email,
+                Username = username,
+                Password = CalculateSha1Hash(password)
+            });
         }
 
         public void SubmitBox() {

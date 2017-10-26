@@ -39,12 +39,34 @@ namespace StoragePal1.Databases {
             return item;
         }
 
-        public int InsertOrUpdate(Items items) {
+        //public int InsertOrUpdate(Items items) {
+        //    int num;
+        //    if (database.Table<Items>().Any(entry => entry.Id == items.Id)) {
+        //        num = database.Update(items);
+        //    } else {
+        //        num = database.Insert(items);
+        //    }
+        //    database.Commit();
+        //    return num;
+        //}
+
+        public int InsertOrUpdate(int id) {
             int num;
-            if (database.Table<Items>().Any(entry => entry.Id == items.Id)) {
-                num = database.Update(items);
+            if (database.Table<Items>().Any(entry => entry.Id == id)) {
+                num = database.Update(id);
             } else {
-                num = database.Insert(items);
+                num = database.Insert(id);
+            }
+            database.Commit();
+            return num;
+        }
+
+        public int InsertOrUpdate(Items item) {
+            int num;
+            if (database.Table<Items>().Any(entry => entry.Id == item.Id)) {
+                num = database.Update(item);
+            } else {
+                num = database.Insert(item);
             }
             database.Commit();
             return num;

@@ -6,13 +6,16 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using System.Text;
+using Xamarin.Forms.Xaml;
 
 namespace StoragePal1 {
     public partial class UserLogInPage : ContentPage {
-        private readonly Database db;
         public UserLogInPage() {
             InitializeComponent();
             BindingContext = new MainViewModel();
+            // Remove this before final release. Used for quick log in
+            usernameEntry.Text = "admin";
+            passwordEntry.Text = "admin";
         }
         async void OnSignUpButtonClicked(object sender, EventArgs e) {
             await Navigation.PushAsync(new SignUpPage());
@@ -20,6 +23,10 @@ namespace StoragePal1 {
 
         private void TempLoginClicked(object sender, EventArgs e) {
             if (((MainViewModel)BindingContext).ValidateUser(usernameEntry.Text, passwordEntry.Text)) {
+                // Session variables
+                Application.Current.Properties.Clear();
+                Application.Current.Properties.Add("uname", usernameEntry.Text);
+                Application.Current.Properties.Add("isLogged", true);
                 Navigation.PushAsync(new StoragePal1_1Page());
             } else {
                 // Need a better feeback mechanism

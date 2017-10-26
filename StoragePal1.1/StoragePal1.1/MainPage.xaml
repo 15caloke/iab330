@@ -4,8 +4,8 @@
     x:Class="StoragePal1.MainPage"
     Title = "StoragePal"
     Icon = "SP_Logo_Icon.png">
-    
-	<ContentPage.Content> 
+
+    <ContentPage.Content>
         <StackLayout Padding= "0,50">
             <Label Text= "StoragePal" 
             FontFamily= "Helvetica"
@@ -22,11 +22,11 @@
               HeightRequest="280"
               VerticalOptions= "CenterAndExpand"
               HorizontalOptions="CenterAndExpand">
-                  <Image.GestureRecognizers>
+                <Image.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="CallCameraPage"
                         NumberOfTapsRequired="1" />
-                   </Image.GestureRecognizers>
+                </Image.GestureRecognizers>
             </Image>
 
             <Label Text= "TAP TO BEGIN" 
@@ -36,6 +36,6 @@
             VerticalOptions= "FillAndExpand"
             HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
-        
-	</ContentPage.Content>
+
+    </ContentPage.Content>
 </ContentPage>

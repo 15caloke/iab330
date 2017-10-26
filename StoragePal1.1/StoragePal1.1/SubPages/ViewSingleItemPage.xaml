@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoragePal1.SubPages.ViewSingleItemPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="titleLabel" Text="Your Item" />
+            <Entry x:Name="itemNameSingle" Text="{Binding Name}" />
+            <Entry x:Name="itemDescriptionSingle" Text="{Binding Description}" />
+            <Entry x:Name="itemBoxNumberSingle" Text="{Binding BoxNumber}" Keyboard="Numeric" />
+            <Button x:Name="saveChangesButton" CommandParameter="{Binding .}" Text="Save Changes" Clicked="SaveChangesButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

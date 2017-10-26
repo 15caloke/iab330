@@ -16,6 +16,7 @@ namespace StoragePal1 {
         private ObservableCollection<Items> items;
         private ObservableCollection<Boxes> boxes;
         private Items selectedItem;
+        private Boxes selectedBox;
 
         public ObservableCollection<Items> AllItems {
             get { return items; }
@@ -33,7 +34,7 @@ namespace StoragePal1 {
             }
         }
 
-        public Items SingleItem {
+        public Items SelectedItem {
             get { return selectedItem; }
             set {
                 selectedItem = value;
@@ -41,11 +42,10 @@ namespace StoragePal1 {
             }
         }
 
-        Boxes box;
         public Boxes SelectedBox {
-            get { return box; }
+            get { return selectedBox; }
             set {
-                box = value;
+                selectedBox = value;
                 OnPropertyChanged();
             }
         }
@@ -58,6 +58,14 @@ namespace StoragePal1 {
 
         public void Delete(Items item) {
             db.Delete(item.Id);
+        }
+
+        public void Update(Items item) {
+            db.InsertOrUpdate(item.Id);
+        }
+
+        public void Delete(Boxes box) {
+            db.Delete(box);
         }
     }
 }

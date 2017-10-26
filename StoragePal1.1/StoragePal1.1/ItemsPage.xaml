@@ -29,11 +29,12 @@
             FontSize= "20" Clicked="AddItemButtonClicked"/>
 
             <SearchBar 
+             x:Name="searchBar"
              AutomationId="searchItem" Text= "Item Search" 
              BackgroundColor= "Orange" >
             </SearchBar>
 
-            <ListView ItemsSource="{Binding AllItems}" SelectedItem="{Binding SingleItem}" IsPullToRefreshEnabled="True" >
+            <ListView ItemsSource="{Binding AllItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -43,10 +44,10 @@
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" Padding="10,0">
                                     <StackLayout HorizontalOptions="StartAndExpand">
-                                        <Label AutomationId="itemNameList" Text="{Binding Name}" FontAttributes="Bold"/>
-                                        <Label AutomationId="itemDescriptionList" Text="{Binding Description}"/>
+                                        <Label x:Name="itemNameFromList" AutomationId="itemNameList" Text="{Binding Name}" FontAttributes="Bold"/>
+                                        <Label x:Name="itemDesFromList" AutomationId="itemDescriptionList" Text="{Binding Description}"/>
                                     </StackLayout>
-                                    <Label AutomationId="itemBoxNumList" Text="{Binding BoxNumber}" 
+                                    <Label x:Name="itemBoxNumFromList" AutomationId="itemBoxNumList" Text="{Binding BoxNumber}" 
                                            HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell.View>
