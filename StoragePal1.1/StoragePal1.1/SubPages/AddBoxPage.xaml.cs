@@ -18,8 +18,13 @@ namespace StoragePal1.SubPages {
         }
 
         private void SubmitBox_Clicked(object sender, EventArgs e) {
-
-            Navigation.PopAsync(true);
+            if ((((MainViewModel)BindingContext).BoxExist((int)Application.Current.Properties["userId"], Int32.Parse(boxNumber.Text)))) {
+                DisplayAlert("Already exist", "The box you want to create is already exist. Please enter a different number","OK");
+            }
+            else {
+                ((MainViewModel)BindingContext).SubmitBox();
+                Navigation.PopAsync(true);
+            }
         }
     }
 }

@@ -15,6 +15,7 @@
             AutomationId="itemDescription"
             Text="{Binding Description}"
             HorizontalTextAlignment="Center" Placeholder="DESCRIPTION"/>
+  
             <Entry x:Name="boxNumber" 
             AutomationId="boxNumber"
             Text="{Binding BoxNumber}"

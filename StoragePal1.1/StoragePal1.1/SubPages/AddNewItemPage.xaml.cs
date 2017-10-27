@@ -31,19 +31,23 @@ namespace StoragePal1.SubPages {
 
         private void ToSubmit_Clicked(object sender, EventArgs e) {
             var selectedItem = ((MainViewModel)BindingContext).GetTheBox(Int32.Parse(boxNumber.Text));
+            if (!((MainViewModel)BindingContext).BoxExist((int)Application.Current.Properties["userId"], Int32.Parse(boxNumber.Text))) {
+                DisplayAlert("Alert","The box doesn't exist yet. Create a box in the box page","Ok");
+            }
+            else {
+                var newItem = new Items() {
+                    Name = itemName.Text,
+                    BoxId = selectedItem.Id,
+                    UserId = ((int)Application.Current.Properties["userId"]),
+                    Description = itemDescription.Text,
+                    BoxNumber = Int32.Parse(boxNumber.Text),
+                    ImagePath = "",
+                };
 
-            var newItem = new Items() {
-                Name = itemName.Text,
-                BoxId = selectedItem.Id,
-                UserId = ((int)Application.Current.Properties["userId"]),
-                Description = itemDescription.Text,
-                BoxNumber = Int32.Parse(boxNumber.Text),
-                ImagePath = "",
-            };
+                ((MainViewModel)BindingContext).SubmitTheItem(newItem);
 
-            ((MainViewModel)BindingContext).SubmitTheItem(newItem);
-
-            Navigation.PopAsync(true);
+                Navigation.PopAsync(true);
+            }
         }
     }
 }

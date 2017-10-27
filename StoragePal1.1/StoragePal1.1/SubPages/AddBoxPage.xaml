@@ -10,7 +10,7 @@
                    Placeholder="Category" Text="{Binding Category}" />
             <!-- Use Later: <Entry x:Name="boxQRCode" AutomationId="boxQRCode" Text="{Binding qrCode}" />-->
             <Button x:Name="submitBox" AutomationId="submitBox" 
-                    Clicked="SubmitBox_Clicked" Command="{Binding SubmitBoxCommand}"
+                    Clicked="SubmitBox_Clicked"
                     Text="Add Box"/>
         </StackLayout>
     </ContentPage.Content>

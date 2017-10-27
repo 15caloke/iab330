@@ -286,6 +286,14 @@ namespace StoragePal1 {
             Category = String.Empty;
             QRCode = String.Empty;
         }
+        public bool BoxExist(int userId, int boxNumber) {
+            foreach (Boxes box in db.FetchAllBoxes()) {
+                if (userId == box.UserId && boxNumber == box.Number) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         private static string CalculateSha1Hash(string input) {
             // step 1, calculate MD5 hash from input
