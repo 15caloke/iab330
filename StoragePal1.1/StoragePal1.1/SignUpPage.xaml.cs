@@ -22,7 +22,7 @@ namespace StoragePal1 {
             } else if (!Validation.Validation.ValidUsername(usernameEntry.Text)) {
                 invalidMessage.Text = "A username must contain 6-20 characters, no special characters allowed";
             } else if (!Validation.Validation.ValidPassword(passwordEntry.Text)) {
-                invalidMessage.Text = "Minimum eight characters, at least one uppercase letter, one lowercase letter and one number are required for password";
+                invalidMessage.Text = "Minimum eight characters, at least one uppercase letter, one lowercase letter, one special character and one number are required for password";
             } else {
                 if (!((MainViewModel)BindingContext).ValidateEmail(emailEntry.Text)) {
                     invalidMessage.Text = "The email already exists";

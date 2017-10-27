@@ -203,6 +203,9 @@ namespace StoragePal1 {
         }
 
         public bool ValidateEmail(string email) {
+            if( email == null) {
+                return false;
+            }
             foreach (Users user in db.FetchAllUsers()) {
                 if (email == user.Email) {
                     return false;
@@ -212,6 +215,9 @@ namespace StoragePal1 {
         }
 
         public bool ValidateUsername(string username) {
+            if (username == null) {
+                return false;
+            }
             foreach (Users user in db.FetchAllUsers()) {
                 if (username == user.Username) {
                     return false;

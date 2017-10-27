@@ -14,7 +14,7 @@
             <Entry x:Name="itemDescription"
             AutomationId="itemDescription"
             Text="{Binding Description}"
-            HorizontalTextAlignment="Center" Placeholder="DESCRIPTION" HeightRequest="200"/>
+            HorizontalTextAlignment="Center" Placeholder="DESCRIPTION"/>
             <Entry x:Name="boxNumber" 
             AutomationId="boxNumber"
             Text="{Binding BoxNumber}"
@@ -26,11 +26,11 @@
                    Text="{Binding ImagePath}"
             HorizontalTextAlignment="Center" /> -->
 
-            <Image Source="ImageUploadIcon.png"
+            <!--<Image Source="ImageUploadIcon.png"
             WidthRequest="100" 
             HeightRequest="100"
             VerticalOptions= "CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"/>
+            HorizontalOptions="CenterAndExpand"/>-->
 
             <Button x:Name="ToSubmit" CommandParameter="{Binding .}" Text="Submit" Clicked="ToSubmit_Clicked" />
 
