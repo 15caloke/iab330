@@ -128,16 +128,27 @@ namespace StoragePalTests
         /// </summary>
         public void TestValidPassword()
         {
-            string testPassword = "Password123";
+            string testPassword = "Password123!";
             bool isValid = StoragePal1.Validation.Validation.ValidPassword(testPassword);
             Assert.IsTrue(isValid);
         }
 
         [TestMethod]
         ///<summary>
+        ///Tests to assert that password does not meet criteria (no special chars)
+        /// </summary>
+        public void TestPasswordNoSpecialChars()
+        {
+            string testPassword = "Password123";
+            bool isValid = StoragePal1.Validation.Validation.ValidPassword(testPassword);
+            Assert.IsFalse(isValid);
+        }
+
+        [TestMethod]
+        ///<summary>
         ///Tests to assert that password with special chars is allowed
         /// </summary>
-        public void TestPasswordSpecialChars()
+        public void TestPasswordManySpecialChars()
         {
             string testPassword = "P4$$woRd!()";
             bool isValid = StoragePal1.Validation.Validation.ValidPassword(testPassword);
@@ -150,7 +161,7 @@ namespace StoragePalTests
         /// </summary>
         public void TestShortUsername()
         {
-            string testUsername = "short"; // 5 characters
+            string testUsername = "Pas5!"; // 5 characters
             bool isValid = StoragePal1.Validation.Validation.ValidUsername(testUsername);
             Assert.IsFalse(isValid);
         }
@@ -161,7 +172,7 @@ namespace StoragePalTests
         /// </summary>
         public void TestLongUsername()
         {
-            string testUsername = "thisusernameistoolong"; // 21 characters
+            string testUsername = "Ausernamethatis2long!"; // 21 characters
             bool isValid = StoragePal1.Validation.Validation.ValidUsername(testUsername);
             Assert.IsFalse(isValid);
         }
