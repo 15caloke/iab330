@@ -31,6 +31,8 @@ namespace StoragePal1 {
 
             var singleItem = new Items() {
                 Id = selectedItem.Id,
+                BoxId = selectedItem.BoxId,
+                UserId = ((int)Application.Current.Properties["userId"]),
                 Name = selectedItem.Name,
                 Description = selectedItem.Description,
                 BoxNumber = selectedItem.BoxNumber,

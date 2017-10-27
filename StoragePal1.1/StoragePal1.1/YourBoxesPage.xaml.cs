@@ -18,8 +18,10 @@ namespace StoragePal1 {
         //Need to put in settings page
         private void Logout_Button_Clicked(object sender, EventArgs e) {
             //Code for Log Out
+            Application.Current.Properties["userId"] = null;
             Application.Current.Properties["uname"] = "";
             Application.Current.Properties["isLogged"] = false;
+            Application.Current.Properties["boxId"] = null;
             Navigation.PopToRootAsync(true);
         }
 
@@ -55,6 +57,7 @@ namespace StoragePal1 {
 
             var singleBox = new Boxes() {
                 Id = selectedbox.Id,
+                UserId = ((int)Application.Current.Properties["userId"]),
                 Number = selectedbox.Number,
                 Category = selectedbox.Category,
                 QRCode = selectedbox.QRCode

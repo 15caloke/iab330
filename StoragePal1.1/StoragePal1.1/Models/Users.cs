@@ -10,22 +10,16 @@ namespace StoragePal1.Models {
 
         [PrimaryKey]
         [AutoIncrement]
-        [NotNull]
+        //[NotNull]
         public int Id { set; get; }
 
         //[NotNull]
-        //public string FirstName { set; get; }
-
-        //[NotNull]
-        //public string LastName { set; get; }
-
-        [NotNull]
         public string Email { set; get; }
 
-        [NotNull]
+        //[NotNull]
         public string Username { set; get; }
 
-        [NotNull]
+        //[NotNull]
         public string Password { set; get; }
     }
 }

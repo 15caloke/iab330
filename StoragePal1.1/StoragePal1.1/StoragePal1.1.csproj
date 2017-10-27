@@ -62,7 +62,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Databases\Database.cs" />
     <Compile Include="IFilePath.cs" />
     <Compile Include="Models\Users.cs" />

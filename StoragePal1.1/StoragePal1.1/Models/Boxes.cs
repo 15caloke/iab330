@@ -11,14 +11,14 @@ namespace StoragePal1.Models {
 
         [PrimaryKey]
         [AutoIncrement]
-        [NotNull]
+        //[NotNull]
         public int Id { get; set; }
 
-        //[ForeignKey(typeof(Users))]
+        [ForeignKey(typeof(Users))]
         //[NotNull]
-        //public int UserId { get; set; }
+        public int UserId { get; set; }
 
-        [NotNull]
+        //[NotNull]
         public int Number { get; set; }
 
         public string Category { get; set; }

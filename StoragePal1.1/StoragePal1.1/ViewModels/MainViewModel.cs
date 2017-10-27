@@ -113,16 +113,42 @@ namespace StoragePal1 {
             }
         }
 
+        private Users theUser;
+        public Users TheUser {
+            get { return theUser; }
+            set {
+                theUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Boxes theBox;
+        public Boxes TheBox {
+            get { return theBox; }
+            set {
+                theBox = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Items theItem;
+        public Items TheItem {
+            get { return theItem; }
+            set {
+                theItem = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand SubmitItemCommand { set; get; }
         public ICommand SubmitUserCommand { set; get; }
         public ICommand SubmitBoxCommand { set; get; }
-        public ICommand ValidateUserCommand { set; get; }
-
-        public ICommand UpdateSelectedItemCommand { set; get; }
-
 
         public MainViewModel() {
             db = new Database();
+            TheUser = new Users();
+            TheBox = new Boxes();
+            TheItem = new Items();
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
@@ -136,6 +162,7 @@ namespace StoragePal1 {
             } else {
                 db.Insert(new Items() {
                     Name = this.Name,
+                    BoxId = TheBox.Id, // needs modification
                     Description = this.Description,
                     BoxNumber = this.BoxNumber,
                     ImagePath = this.ImagePath
@@ -163,28 +190,27 @@ namespace StoragePal1 {
         }
 
         public bool ValidateUser(string username, string password) {
-           bool isValidated = true;
-           foreach (Users x in db.FetchAllUsers()) {
+            bool isValidated = false;
+            foreach (Users x in db.FetchAllUsers()) {
                 if (x.Username == username && x.Password == CalculateSha1Hash(username + password)) {
-                  isValidated = true;
+                    isValidated = true;
                     break;
-               } else {
-                   isValidated = false;
-               }
-           }
+                } else {
+                    isValidated = false;
+                }
+            }
             return isValidated;
         }
 
-
-        public bool ValidateEmail(string email){
-            foreach (Users user in db.FetchAllUsers()){
-                if( email == user.Email) {
+        public bool ValidateEmail(string email) {
+            foreach (Users user in db.FetchAllUsers()) {
+                if (email == user.Email) {
                     return false;
                 }
             }
-                return true;
-
+            return true;
         }
+
         public bool ValidateUsername(string username) {
             foreach (Users user in db.FetchAllUsers()) {
                 if (username == user.Username) {
@@ -192,22 +218,60 @@ namespace StoragePal1 {
                 }
             }
             return true;
-
         }
 
-
-
+        public bool ValidateSignup(string email, string username) {
+            bool isValid = false;
+            foreach (Users user in db.FetchAllUsers()) {
+                if (email != user.Email && username != user.Username) { // may need to change to || ?
+                    isValid = true;
+                } else {
+                    isValid = false;
+                }
+            }
+            return isValid;
+        }
 
         public void CreateUser(string email, string username, string password) {
             db.Insert(new Users() {
                 Email = email,
                 Username = username,
-                Password = CalculateSha1Hash(password)
+                Password = CalculateSha1Hash(username + password)
             });
+        }
+
+        public void GetUserId(Users user) {
+            db.FetchUser(user.Id);
+        }
+
+        public Users GetTheUser(string username) {
+            Users user;
+            user = db.FetchUser(username);
+            return user;
+        }
+
+        public Boxes GetTheBox(int boxNum) {
+            Boxes box;
+            box = db.FetchBox(boxNum);
+            return box;
+        }
+
+        public int GetBoxIdFromItem(Items item) {
+            foreach (Boxes x in db.FetchAllBoxes()) {
+                if (item.BoxNumber == x.Number) {
+                    return x.Id;
+                }
+            }
+            return 0;
+        }
+
+        public void SubmitTheItem(Items item) {
+            db.Insert(item);
         }
 
         public void SubmitBox() {
             db.Insert(new Boxes() {
+                UserId = ((int)Application.Current.Properties["userId"]),
                 Number = Number,
                 Category = Category,
                 QRCode = QRCode

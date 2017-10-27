@@ -31,7 +31,10 @@
             HeightRequest="100"
             VerticalOptions= "CenterAndExpand"
             HorizontalOptions="CenterAndExpand"/>
-            <Image Source="add_item_icon.png"
+
+            <Button x:Name="ToSubmit" CommandParameter="{Binding .}" Text="Submit" Clicked="ToSubmit_Clicked" />
+
+            <!--<Image Source="add_item_icon.png"
             WidthRequest="50" 
             HeightRequest="50"
             VerticalOptions= "CenterAndExpand"
@@ -40,10 +43,10 @@
                     <TapGestureRecognizer
                         NumberOfTapsRequired="1"
                         Tapped="TapGestureRecognizer_Tapped"
-                        Command="{Binding SubmitItemCommand}"
+                        CommandParameter="{Binding .}"
                          />
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
         </StackLayout>
 
     </ContentPage.Content>

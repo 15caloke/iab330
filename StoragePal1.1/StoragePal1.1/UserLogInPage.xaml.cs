@@ -18,20 +18,23 @@ namespace StoragePal1 {
             passwordEntry.Text = "admin";
             ErrorMessage.Text = "";
         }
-        async void OnSignUpButtonClicked(object sender, EventArgs e) {
-            await Navigation.PushAsync(new SignUpPage());
+        private void OnSignUpButtonClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new SignUpPage());
         }
 
         private void TempLoginClicked(object sender, EventArgs e) {
             if (((MainViewModel)BindingContext).ValidateUser(usernameEntry.Text, passwordEntry.Text)) {
-                // Session variables
+                var user = ((MainViewModel)BindingContext).GetTheUser(usernameEntry.Text);
                 ErrorMessage.Text = "";
-               Application.Current.Properties.Clear();
-                Application.Current.Properties.Add("uname", usernameEntry.Text);
+                // Session variables
+                Application.Current.Properties.Clear();
+                Application.Current.Properties.Add("userId", user.Id);
+                Application.Current.Properties.Add("uname", user.Username);
                 Application.Current.Properties.Add("isLogged", true);
                 Navigation.PushAsync(new StoragePal1_1Page());
             } else {
                 // Need a better feeback mechanism
+                //usernameEntry.Text = "Username and/or Password Invalid";
                 ErrorMessage.Text = "Username and/or Password Invalid";
             }
         }

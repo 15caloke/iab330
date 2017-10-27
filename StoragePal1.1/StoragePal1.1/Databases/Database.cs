@@ -123,8 +123,16 @@ namespace StoragePal1.Databases {
             return database.Table<Boxes>().ToList();
         }
 
+        public List<Boxes> FetchAllBoxes(int user) {
+            return database.Table<Boxes>().Where(boxes => boxes.UserId == user).ToList();
+        }
+
         public List<Items> FetchAllItems() {
             return database.Table<Items>().ToList();
+        }
+
+        public List<Items> FetchAllItems(int user) {
+            return database.Table<Items>().Where(items => items.UserId == user).ToList();
         }
 
         //public List<Collaboration> FetchAllCollab() {
@@ -135,8 +143,12 @@ namespace StoragePal1.Databases {
             return database.Table<Users>().Where(entry => entry.Id == key).FirstOrDefault();
         }
 
-        public Boxes FetchBox(int key) {
-            return database.Table<Boxes>().Where(entry => entry.Id == key).FirstOrDefault();
+        public Users FetchUser(string username) {
+            return database.Table<Users>().Where(entry => entry.Username == username).FirstOrDefault();
+        }
+
+        public Boxes FetchBox(int boxNum) {
+            return database.Table<Boxes>().Where(entry => entry.Number == boxNum).FirstOrDefault();
         }
 
         public Items FetchItem(int key) {

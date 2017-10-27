@@ -14,11 +14,14 @@ namespace StoragePal1.SubPages {
         private readonly Database db;
         public ViewSingleItemPage() {
             InitializeComponent();
+            BindingContext = new MainViewModel();
             db = new Database();
         }
 
         private void SaveChangesButton_Clicked(object sender, EventArgs e) {
             var theItem = ((Button)sender).CommandParameter as Items;
+            var belongedBox = db.FetchBox(theItem.BoxNumber);
+            theItem.BoxId = belongedBox.Id;
             db.InsertOrUpdate(theItem);
 
             // Need to make it not crash when save chnages is made (pops to login to prevent crashing)

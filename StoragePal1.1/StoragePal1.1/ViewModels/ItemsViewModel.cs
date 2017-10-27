@@ -52,8 +52,8 @@ namespace StoragePal1 {
 
         public ItemsViewModel() {
             db = new Database();
-            AllItems = new ObservableCollection<Items>(db.FetchAllItems());
-            AllBoxes = new ObservableCollection<Boxes>(db.FetchAllBoxes());
+            AllItems = new ObservableCollection<Items>(db.FetchAllItems(((int)Application.Current.Properties["userId"])));
+            AllBoxes = new ObservableCollection<Boxes>(db.FetchAllBoxes(((int)Application.Current.Properties["userId"])));
         }
 
         public void Delete(Items item) {

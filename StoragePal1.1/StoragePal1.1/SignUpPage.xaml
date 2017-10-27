@@ -5,34 +5,34 @@
     Title="Sign Up">
 
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing= "10" Padding="30,0">
+                <Image  Source="NewUser_Image.png"
+                  WidthRequest="200" 
+                  VerticalOptions= "CenterAndExpand"
+                  HorizontalOptions="CenterAndExpand"/>
+                <Label  x:Name="invalidMessage" 
+                Text= "" 
+                FontFamily= "Helvetica"
+                VerticalTextAlignment= "Center"
+                HorizontalTextAlignment= "Center" 
+                Font= "Bold" 
+                FontSize= "16"
+                VerticalOptions= "EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                TextColor= "Red"/>
 
-        <StackLayout VerticalOptions="CenterAndExpand" Spacing= "10" Padding="30,0">
-            <Image  Source="NewUser_Image.png"
-              WidthRequest="200" 
-              VerticalOptions= "CenterAndExpand"
-              HorizontalOptions="CenterAndExpand"/>
-            <Label  x:Name="invalidMessage" 
-            Text= "" 
-            FontFamily= "Helvetica"
-            VerticalTextAlignment= "Center"
-            HorizontalTextAlignment= "Center" 
-            Font= "Bold" 
-            FontSize= "20"
-            VerticalOptions= "EndAndExpand"
-            HorizontalOptions="CenterAndExpand"
-            TextColor= "Red"/>
-
-            <Label Text="Email address" />
-            <Entry x:Name="emailEntry" Placeholder="email@example.com" Text="{Binding Email}" AutomationId="email" Keyboard="Email" />
-            <Label Text="Username" />
-            <Entry x:Name="usernameEntry" Placeholder="Your Username" Text="{Binding Username}" AutomationId="username"/>
-            <Label Text="Password" />
-            <Entry x:Name="passwordEntry" Placeholder="Your Password" Text="{Binding Password}" AutomationId="password" IsPassword="true" />
-            <Label Text="Re-Enter Password" />
-            <Entry x:Name="rePasswordEntry" Placeholder="Your Password"  AutomationId="rePassword" IsPassword="true" />
-            <Button Text="Sign Up" Clicked="OnCreate"/>
-            <Label x:Name="messageLabel" />
-        </StackLayout>
-
+                <Label Text="Email address" />
+                <Entry x:Name="emailEntry" Placeholder="email@example.com" Text="{Binding Email}" AutomationId="email" Keyboard="Email" />
+                <Label Text="Username" />
+                <Entry x:Name="usernameEntry" Placeholder="Your Username" Text="{Binding Username}" AutomationId="username"/>
+                <Label Text="Password" />
+                <Entry x:Name="passwordEntry" Placeholder="Your Password" Text="{Binding Password}" AutomationId="password" IsPassword="true" />
+                <Label Text="Re-Enter Password" />
+                <Entry x:Name="rePasswordEntry" Placeholder="Your Password"  AutomationId="rePassword" IsPassword="true" />
+                <Button Text="Sign Up" Clicked="OnCreate"/>
+                <Label x:Name="messageLabel" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
