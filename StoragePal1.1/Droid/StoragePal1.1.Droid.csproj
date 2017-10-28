@@ -152,7 +152,7 @@
     <AndroidResource Include="Resources\drawable\ImageUploadIcon.png" />
     <AndroidResource Include="Resources\drawable\add_item_icon.png" />
     <AndroidResource Include="Resources\drawable\LogOut_Image.png" />
-    <AndroidResource Include="Resources\drawable\Logout_Icon_Android.png" />
+    <AndroidResource Include="Resources\drawable\Logout_Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

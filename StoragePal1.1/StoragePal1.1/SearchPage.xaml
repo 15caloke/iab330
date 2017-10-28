@@ -6,7 +6,7 @@
     Icon = "Logout_Icon.png">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30,0" Spacing="20">
-              <Image  Source="Logout_Image.png"
+              <Image  Source="LogOut_Image.png"
                   WidthRequest="200" 
                   VerticalOptions= "CenterAndExpand"
                   HorizontalOptions="CenterAndExpand"/>

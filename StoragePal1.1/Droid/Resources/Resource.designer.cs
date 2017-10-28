@@ -2169,7 +2169,7 @@ namespace StoragePal1.Droid
 			public const int Items_Icon = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int Logout_Icon_Android = 2130837653;
+			public const int Logout_Icon = 2130837653;
 			
 			// aapt resource value: 0x7f020096
 			public const int LogOut_Image = 2130837654;

@@ -2547,7 +2547,7 @@ containing a value of this type.
         public static final int icon=0x7f020092;
         public static final int imageuploadicon=0x7f020093;
         public static final int items_icon=0x7f020094;
-        public static final int logout_icon_android=0x7f020095;
+        public static final int logout_icon=0x7f020095;
         public static final int logout_image=0x7f020096;
         public static final int moving_icon=0x7f020097;
         public static final int mr_dialog_material_background_dark=0x7f020098;
