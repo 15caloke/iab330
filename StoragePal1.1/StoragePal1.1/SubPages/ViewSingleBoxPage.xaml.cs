@@ -20,7 +20,6 @@ namespace StoragePal1.SubPages {
             var theBox = ((Button)sender).CommandParameter as Boxes;
             db.InsertOrUpdate(theBox);
 
-            // Need to make it not crash when save chnages is made (pops to login to prevent crashing)
             Navigation.PopAsync(true);
         }
     }

@@ -20,10 +20,6 @@ namespace StoragePal1 {
             BindingContext = new ItemsViewModel();
         }
 
-        protected override void OnDisappearing() {
-            // Might delete
-        }
-
         private void MenuItem_Clicked(object sender, EventArgs e) {
             var selectedItem = ((MenuItem)sender).CommandParameter as Items;
             ((ItemsViewModel)BindingContext).Delete(selectedItem);
@@ -32,9 +28,8 @@ namespace StoragePal1 {
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedItem = e.SelectedItem as Items;
-            if (selectedItem == null) {
-            }
-            else {
+
+            if (selectedItem == null) { } else {
                 var singleItem = new Items() {
                     Id = selectedItem.Id,
                     BoxId = selectedItem.BoxId,
@@ -48,6 +43,7 @@ namespace StoragePal1 {
                 var singleItemPage = new SubPages.ViewSingleItemPage() {
                     BindingContext = singleItem
                 };
+
                 Navigation.PushAsync(singleItemPage);
             }
         }

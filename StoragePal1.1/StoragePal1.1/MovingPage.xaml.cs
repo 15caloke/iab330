@@ -7,14 +7,18 @@ using Xamarin.Forms;
 
 namespace StoragePal1 {
     public partial class MovingPage : ContentPage {
-        private List<int> boxNumbers;
+        private const int FONT_SIZE = 16;
+        private List<Boxes> relatedBoxes;
         private Label boxNumbersLabel;
 
         public MovingPage() {
             InitializeComponent();
             BindingContext = new ItemsViewModel();
-            boxNumbers = new List<int>();
-            boxNumbersLabel = new Label();
+            relatedBoxes = new List<Boxes>();
+            boxNumbersLabel = new Label() {
+                FontSize = FONT_SIZE,
+                FontAttributes = FontAttributes.Bold,
+            };
         }
 
         protected override void OnAppearing() {
@@ -33,28 +37,29 @@ namespace StoragePal1 {
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedRoom = e.SelectedItem as Rooms;
-            if (selectedRoom == null) {
 
-            }
-            else {
+            if (selectedRoom == null) { } else {
                 var theRoom = new Rooms() {
                     Id = selectedRoom.Id,
                     UserId = ((int)Application.Current.Properties["userId"]),
                     Function = selectedRoom.Function
                 };
 
-                foreach (Boxes x in ((ItemsViewModel)BindingContext).AllBoxes) {
-                    if (x.RoomId == theRoom.Id) {
-                        boxNumbers.Add(x.Number);
+                foreach (Boxes box in ((ItemsViewModel)BindingContext).AllBoxes) {
+                    if (box.RoomId == theRoom.Id) {
+                        relatedBoxes.Add(box);
                     }
                 }
 
-                boxNumbersLabel.Text = "Boxes in the " + theRoom.Function + " are: \n";
-
-                foreach (int eachNum in boxNumbers) {
-                    boxNumbersLabel.Text += "Box " + eachNum.ToString() + "\n";
+                if (relatedBoxes.Count == 0 || relatedBoxes == null) {
+                    boxNumbersLabel.Text = "There are no boxes in this room";
+                } else {
+                    boxNumbersLabel.Text = "Boxes in the " + theRoom.Function + " are: \n";
                 }
 
+                foreach (Boxes eachBox in relatedBoxes) {
+                    boxNumbersLabel.Text += "Box " + eachBox.Number.ToString() + " - " + eachBox.Category + "\n";
+                }
 
                 var selectedRoomPage = new SubPages.ViewSingleRoomPage() {
                     BindingContext = theRoom,
@@ -62,6 +67,7 @@ namespace StoragePal1 {
                 };
 
                 Navigation.PushAsync(selectedRoomPage);
+                relatedBoxes.Clear();
             }
         }
     }

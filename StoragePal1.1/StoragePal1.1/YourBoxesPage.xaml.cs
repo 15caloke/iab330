@@ -55,8 +55,8 @@ namespace StoragePal1 {
             // Binds SelectedBox to SelectedItem
             var selectedbox = e.SelectedItem as Boxes;
             if (selectedbox == null) {
-            }
-            else {
+
+            } else {
                 var singleBox = new Boxes() {
                     Id = selectedbox.Id,
                     UserId = ((int)Application.Current.Properties["userId"]),
@@ -69,7 +69,6 @@ namespace StoragePal1 {
                     BindingContext = singleBox
                 };
                 Navigation.PushAsync(singleBoxPage);
-
             }
         }
 
