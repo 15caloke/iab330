@@ -5,13 +5,6 @@
     Title = "Items"
     Icon = "Items_Icon.png">
     <ContentPage.Content>
-
-        <!--<ResourceDictionary>
-            <Style x:Key= "LabelStyles" TargetType= "Label">
-                <Setter Property=""/>
-            </Style>
-        </ResourceDictionary>-->
-
         <StackLayout>
             <Label AutomationId="itemsLabel" 
             Text= "Items" 
@@ -30,11 +23,11 @@
 
             <SearchBar 
              x:Name="searchBar"
-             AutomationId="searchItem" Text= "Item Search" 
-             BackgroundColor= "Orange" >
-            </SearchBar>
+             AutomationId="searchItem" Placeholder="Search Item Name or Box number" 
+             BackgroundColor= "Orange" 
+             TextChanged="SearchBar_TextChanged" />
 
-            <ListView ItemsSource="{Binding AllItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" >
+            <ListView x:Name="itemsList" ItemsSource="{Binding AllItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

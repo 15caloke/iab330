@@ -42,7 +42,7 @@ namespace StoragePal1 {
                 var theRoom = new Rooms() {
                     Id = selectedRoom.Id,
                     UserId = ((int)Application.Current.Properties["userId"]),
-                    Function = selectedRoom.Function
+                    Function = selectedRoom.Function,
                 };
 
                 foreach (Boxes box in ((ItemsViewModel)BindingContext).AllBoxes) {

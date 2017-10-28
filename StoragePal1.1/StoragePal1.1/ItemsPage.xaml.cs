@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using StoragePal1.Databases;
 using StoragePal1.Models;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 using Xamarin.Forms.Xaml;
 
 namespace StoragePal1 {
     public partial class ItemsPage : ContentPage {
+        private ObservableCollection<Items> searchedItems;
+
         public ItemsPage() {
             InitializeComponent();
             BindingContext = new ItemsViewModel();
+            searchedItems = new ObservableCollection<Items>();
         }
         private void AddItemButtonClicked(Object sender, EventArgs e) {
             Navigation.PushAsync(new SubPages.AddNewItemPage());
@@ -46,6 +50,24 @@ namespace StoragePal1 {
 
                 Navigation.PushAsync(singleItemPage);
             }
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e) {
+            searchedItems.Clear();
+            var inputtedSearch = searchBar.Text;
+            var listOfItems = ((ItemsViewModel)BindingContext).AllItems;
+            foreach (Items item in listOfItems) {
+                if (item.Name.Contains(inputtedSearch.ToLower())
+                    || item.Name.Contains(inputtedSearch.ToUpper())
+                    || item.Name.Contains(inputtedSearch)) {
+                    searchedItems.Add(item);
+                } else if (item.BoxNumber.ToString().Contains(inputtedSearch)) {
+                    searchedItems.Add(item);
+                }
+            }
+
+            itemsList.ItemsSource = searchedItems;
+            OnAppearing();
         }
     }
 }

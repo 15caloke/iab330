@@ -61,6 +61,7 @@ namespace StoragePal1 {
                     Id = selectedbox.Id,
                     UserId = ((int)Application.Current.Properties["userId"]),
                     Number = selectedbox.Number,
+                    RoomName = selectedbox.RoomName,
                     Category = selectedbox.Category,
                     QRCode = selectedbox.QRCode
                 };
