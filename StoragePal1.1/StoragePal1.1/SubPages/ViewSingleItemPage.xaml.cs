@@ -31,7 +31,6 @@ namespace StoragePal1.SubPages {
             } else {
                 theItem.BoxId = belongedBox.Id;
                 db.InsertOrUpdate(theItem);
-
                 Navigation.PopAsync(true);
             }
         }

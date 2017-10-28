@@ -18,9 +18,15 @@ namespace StoragePal1.SubPages {
         }
         private void SaveChangesButton_Clicked(object sender, EventArgs e) {
             var theBox = ((Button)sender).CommandParameter as Boxes;
-            db.InsertOrUpdate(theBox);
+            var belongedRoom = db.FetchRoom(boxRoomName.Text);
 
-            Navigation.PopAsync(true);
+            if (belongedRoom == null) {
+                DisplayAlert("Invalid Room Name", "The room name does not exist. Please enter a valid one or create one", "OK");
+            } else {
+                theBox.RoomId = belongedRoom.Id;
+                db.InsertOrUpdate(theBox);
+                Navigation.PopAsync(true);
+            }
         }
     }
 }

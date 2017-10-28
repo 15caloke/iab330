@@ -13,7 +13,6 @@ using PCLCrypto;
 namespace StoragePal1 {
     public class MainViewModel : BaseViewModel {
         private readonly Database db;
-        private List<int> boxNumsList;
 
         private string name;
 
@@ -180,7 +179,6 @@ namespace StoragePal1 {
             TheBox = new Boxes();
             TheItem = new Items();
             Room = new Rooms();
-            boxNumsList = new List<int>();
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
