@@ -68,3 +68,5 @@ D:\iab330\StoragePal1.1\StoragePal1.1\bin\Debug\Newtonsoft.Json.xml
 D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.dll
 D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.pdb
 D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.1.csprojResolveAssemblyReference.cache
+D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.SubPages.AddRoomPage.xaml.g.cs
+D:\iab330\StoragePal1.1\StoragePal1.1\obj\Debug\StoragePal1.SubPages.ViewSingleRoomPage.xaml.g.cs

@@ -21,7 +21,7 @@ namespace StoragePal1.SubPages {
             db.InsertOrUpdate(theBox);
 
             // Need to make it not crash when save chnages is made (pops to login to prevent crashing)
-            Navigation.PopToRootAsync(true);
+            Navigation.PopAsync(true);
         }
     }
 }

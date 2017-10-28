@@ -32,21 +32,24 @@ namespace StoragePal1 {
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedItem = e.SelectedItem as Items;
+            if (selectedItem == null) {
+            }
+            else {
+                var singleItem = new Items() {
+                    Id = selectedItem.Id,
+                    BoxId = selectedItem.BoxId,
+                    UserId = ((int)Application.Current.Properties["userId"]),
+                    Name = selectedItem.Name,
+                    Description = selectedItem.Description,
+                    BoxNumber = selectedItem.BoxNumber,
+                    ImagePath = selectedItem.ImagePath
+                };
 
-            var singleItem = new Items() {
-                Id = selectedItem.Id,
-                BoxId = selectedItem.BoxId,
-                UserId = ((int)Application.Current.Properties["userId"]),
-                Name = selectedItem.Name,
-                Description = selectedItem.Description,
-                BoxNumber = selectedItem.BoxNumber,
-                ImagePath = selectedItem.ImagePath
-            };
-
-            var singleItemPage = new SubPages.ViewSingleItemPage() {
-                BindingContext = singleItem
-            };
-            Navigation.PushAsync(singleItemPage);
+                var singleItemPage = new SubPages.ViewSingleItemPage() {
+                    BindingContext = singleItem
+                };
+                Navigation.PushAsync(singleItemPage);
+            }
         }
     }
 }

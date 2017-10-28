@@ -54,20 +54,23 @@ namespace StoragePal1 {
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             // Binds SelectedBox to SelectedItem
             var selectedbox = e.SelectedItem as Boxes;
+            if (selectedbox == null) {
+            }
+            else {
+                var singleBox = new Boxes() {
+                    Id = selectedbox.Id,
+                    UserId = ((int)Application.Current.Properties["userId"]),
+                    Number = selectedbox.Number,
+                    Category = selectedbox.Category,
+                    QRCode = selectedbox.QRCode
+                };
 
-            var singleBox = new Boxes() {
-                Id = selectedbox.Id,
-                UserId = ((int)Application.Current.Properties["userId"]),
-                Number = selectedbox.Number,
-                Category = selectedbox.Category,
-                QRCode = selectedbox.QRCode
-            };
+                var singleBoxPage = new SubPages.ViewSingleBoxPage() {
+                    BindingContext = singleBox
+                };
+                Navigation.PushAsync(singleBoxPage);
 
-            var singleBoxPage = new SubPages.ViewSingleBoxPage() {
-                BindingContext = singleBox
-            };
-            Navigation.PushAsync(singleBoxPage);
-
+            }
         }
 
         private void ExportButton_Clicked(object sender, EventArgs e) {

@@ -33,32 +33,36 @@ namespace StoragePal1 {
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedRoom = e.SelectedItem as Rooms;
+            if (selectedRoom == null) {
 
-            var theRoom = new Rooms() {
-                Id = selectedRoom.Id,
-                UserId = ((int)Application.Current.Properties["userId"]),
-                Function = selectedRoom.Function
-            };
+            }
+            else {
+                var theRoom = new Rooms() {
+                    Id = selectedRoom.Id,
+                    UserId = ((int)Application.Current.Properties["userId"]),
+                    Function = selectedRoom.Function
+                };
 
-            foreach (Boxes x in ((ItemsViewModel)BindingContext).AllBoxes) {
-                if (x.RoomId == theRoom.Id) {
-                    boxNumbers.Add(x.Number);
+                foreach (Boxes x in ((ItemsViewModel)BindingContext).AllBoxes) {
+                    if (x.RoomId == theRoom.Id) {
+                        boxNumbers.Add(x.Number);
+                    }
                 }
+
+                boxNumbersLabel.Text = "Boxes in the " + theRoom.Function + " are: \n";
+
+                foreach (int eachNum in boxNumbers) {
+                    boxNumbersLabel.Text += "Box " + eachNum.ToString() + "\n";
+                }
+
+
+                var selectedRoomPage = new SubPages.ViewSingleRoomPage() {
+                    BindingContext = theRoom,
+                    Content = boxNumbersLabel
+                };
+
+                Navigation.PushAsync(selectedRoomPage);
             }
-
-            boxNumbersLabel.Text = "Boxes in the " + theRoom.Function + " are: \n";
-
-            foreach(int eachNum in boxNumbers) {
-                boxNumbersLabel.Text += "Box " + eachNum.ToString() + "\n";
-            }
-            
-
-            var selectedRoomPage = new SubPages.ViewSingleRoomPage() {
-                BindingContext = theRoom,
-                Content = boxNumbersLabel
-            };
-
-            Navigation.PushAsync(selectedRoomPage);
         }
     }
 }
