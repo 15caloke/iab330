@@ -1,19 +1,23 @@
 ﻿<Properties StartupConfiguration="{BD8BB5D5-A2A9-4CC9-86C7-427C93F0C74B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StoragePal1.1/YourBoxesPage.xaml">
     <Files>
-      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml" Line="17" Column="90" />
-      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs" Line="14" Column="19" />
-      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="17" Column="32" />
+      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml" Line="57" Column="1" />
+      <File FileName="StoragePal1.1/SubPages/AddNewItemPage.xaml.cs" Line="14" Column="1" />
+      <File FileName="StoragePal1.1/ItemsPage.xaml" Line="61" Column="1" />
       <File FileName="StoragePal1.1/ItemsPage.xaml.cs" Line="25" Column="40" />
       <File FileName="StoragePal1.1/Databases/Database.cs" Line="9" Column="9" />
       <File FileName="StoragePal1.1/ViewModels/ItemsViewModel.cs" Line="21" Column="10" />
       <File FileName="StoragePal1.1/ViewModels/BaseViewModel.cs" Line="50" Column="26" />
-      <File FileName="StoragePal1.1/ViewModels/MainViewModel.cs" Line="77" Column="14" />
+      <File FileName="StoragePal1.1/ViewModels/MainViewModel.cs" Line="77" Column="10" />
       <File FileName="StoragePal1.1/Models/Users.cs" Line="1" Column="1" />
       <File FileName="StoragePal1.1/Models/Items.cs" Line="1" Column="1" />
       <File FileName="iOS/AppDelegate.cs" Line="30" Column="30" />
       <File FileName="StoragePal1.1/aws-sessionprovider-sample.config" Line="1" Column="1" />
       <File FileName="StoragePal1.1/Models/Boxes.cs" Line="1" Column="1" />
+      <File FileName="StoragePal1.1/SearchPage.xaml" Line="19" Column="1" />
+      <File FileName="StoragePal1.1/SearchPage.xaml.cs" Line="24" Column="9" />
+      <File FileName="StoragePal1.1/YourBoxesPage.xaml.cs" Line="16" Column="1" />
+      <File FileName="StoragePal1.1/YourBoxesPage.xaml" Line="36" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -34,9 +34,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!-- needs to be on a settings page/tab/menu-->
-            <Label x:Name="usernameLabel"/>
-            <Button x:Name="logoutButton" Text="Logout" Clicked="Logout_Button_Clicked" />
 
             <Button Text= "Add" 
             TextColor= "Orange" 
