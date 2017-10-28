@@ -14,10 +14,11 @@ namespace StoragePal1.Databases {
 
         public Database() {
             database = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
-                DependencyService.Get<IFilePath>().GetFilePath("StoragePal1.db3"));
+                DependencyService.Get<IFilePath>().GetFilePath("StoragePal1_1.db3"));
             database.CreateTable<Users>();
             database.CreateTable<Boxes>();
             database.CreateTable<Items>();
+            database.CreateTable<Rooms>();
             //database.CreateTable<Collaboration>();
         }
 
@@ -37,6 +38,12 @@ namespace StoragePal1.Databases {
             var item = database.Insert(items);
             database.Commit();
             return item;
+        }
+
+        public int Insert(Rooms rooms) {
+            var room = database.Insert(rooms);
+            database.Commit();
+            return room;
         }
 
         //public int InsertOrUpdate(Items items) {
@@ -94,6 +101,17 @@ namespace StoragePal1.Databases {
             return num;
         }
 
+        public int InsertOrUpdate(Rooms room) {
+            int num;
+            if (database.Table<Rooms>().Any(entry => entry.Id == room.Id)) {
+                num = database.Update(room);
+            } else {
+                num = database.Insert(room);
+            }
+            database.Commit();
+            return num;
+        }
+
         public int Delete(Users users) {
             int num;
             num = database.Delete<Users>(users.Id);
@@ -104,6 +122,13 @@ namespace StoragePal1.Databases {
         public int Delete(Boxes boxes) {
             int num;
             num = database.Delete<Boxes>(boxes.Id);
+            database.Commit();
+            return num;
+        }
+
+        public int Delete(Rooms rooms) {
+            int num;
+            num = database.Delete<Rooms>(rooms.Id);
             database.Commit();
             return num;
         }
@@ -131,6 +156,14 @@ namespace StoragePal1.Databases {
             return database.Table<Items>().ToList();
         }
 
+        public List<Rooms> FetchAllRooms() {
+            return database.Table<Rooms>().ToList();
+        }
+
+        public List<Rooms> FetchAllRooms(int user) {
+            return database.Table<Rooms>().Where(rooms => rooms.UserId == user).ToList();
+        }
+
         public List<Items> FetchAllItems(int user) {
             return database.Table<Items>().Where(items => items.UserId == user).ToList();
         }
@@ -153,6 +186,14 @@ namespace StoragePal1.Databases {
 
         public Items FetchItem(int key) {
             return database.Table<Items>().Where(entry => entry.Id == key).FirstOrDefault();
+        }
+
+        public Rooms FetchRoom(int key) {
+            return database.Table<Rooms>().Where(entry => entry.Id == key).FirstOrDefault();
+        }
+
+        public Rooms FetchRoom(string function) {
+            return database.Table<Rooms>().Where(entry => entry.Function == function).FirstOrDefault();
         }
 
         //public Collaboration FetchCollab(int key) {

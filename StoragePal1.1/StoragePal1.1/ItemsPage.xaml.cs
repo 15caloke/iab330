@@ -20,6 +20,10 @@ namespace StoragePal1 {
             BindingContext = new ItemsViewModel();
         }
 
+        protected override void OnDisappearing() {
+            // Might delete
+        }
+
         private void MenuItem_Clicked(object sender, EventArgs e) {
             var selectedItem = ((MenuItem)sender).CommandParameter as Items;
             ((ItemsViewModel)BindingContext).Delete(selectedItem);

@@ -14,8 +14,8 @@ namespace StoragePal1 {
             InitializeComponent();
             BindingContext = new MainViewModel();
             // Remove this before final release. Used for quick log in
-            usernameEntry.Text = "admin";
-            passwordEntry.Text = "admin";
+            usernameEntry.Text = "theAdmin";
+            passwordEntry.Text = "Password123";
             ErrorMessage.Text = "";
         }
         private void OnSignUpButtonClicked(object sender, EventArgs e) {
@@ -26,15 +26,15 @@ namespace StoragePal1 {
             if (((MainViewModel)BindingContext).ValidateUser(usernameEntry.Text, passwordEntry.Text)) {
                 var user = ((MainViewModel)BindingContext).GetTheUser(usernameEntry.Text);
                 ErrorMessage.Text = "";
+
                 // Session variables
                 Application.Current.Properties.Clear();
                 Application.Current.Properties.Add("userId", user.Id);
                 Application.Current.Properties.Add("uname", user.Username);
                 Application.Current.Properties.Add("isLogged", true);
+
                 Navigation.PushAsync(new StoragePal1_1Page());
             } else {
-                // Need a better feeback mechanism
-                //usernameEntry.Text = "Username and/or Password Invalid";
                 ErrorMessage.Text = "Username and/or Password Invalid";
             }
         }

@@ -13,6 +13,7 @@ using PCLCrypto;
 namespace StoragePal1 {
     public class MainViewModel : BaseViewModel {
         private readonly Database db;
+        private List<int> boxNumsList;
 
         private string name;
 
@@ -104,11 +105,30 @@ namespace StoragePal1 {
             }
         }
 
+        private string roomName;
+        public string RoomName {
+            get { return roomName; }
+            set {
+                roomName = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string qrCode;
         public string QRCode {
             get { return qrCode; }
             set {
                 qrCode = value;
+                OnPropertyChanged();
+            }
+        }
+
+        // Rooms model
+        private string function;
+        public string Function {
+            get { return function; }
+            set {
+                function = value;
                 OnPropertyChanged();
             }
         }
@@ -140,18 +160,31 @@ namespace StoragePal1 {
             }
         }
 
+        private Rooms room;
+        public Rooms Room {
+            get { return room; }
+            set {
+                room = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand SubmitItemCommand { set; get; }
         public ICommand SubmitUserCommand { set; get; }
         public ICommand SubmitBoxCommand { set; get; }
+        public ICommand SubmitRoomCommand { set; get; }
 
         public MainViewModel() {
             db = new Database();
             TheUser = new Users();
             TheBox = new Boxes();
             TheItem = new Items();
+            Room = new Rooms();
+            boxNumsList = new List<int>();
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
+            SubmitRoomCommand = new Command(SubmitRoom);
         }
 
         public void SubmitItems() {
@@ -188,6 +221,13 @@ namespace StoragePal1 {
             Username = String.Empty;
             Password = String.Empty;
         }
+        public void SubmitRoom() {
+            db.Insert(new Rooms() {
+                UserId = ((int)(Application.Current.Properties["userId"])),
+                Function = Function,
+            });
+            Function = String.Empty;
+        }
 
         public bool ValidateUser(string username, string password) {
             bool isValidated = false;
@@ -203,9 +243,6 @@ namespace StoragePal1 {
         }
 
         public bool ValidateEmail(string email) {
-            if( email == null) {
-                return false;
-            }
             foreach (Users user in db.FetchAllUsers()) {
                 if (email == user.Email) {
                     return false;
@@ -215,9 +252,6 @@ namespace StoragePal1 {
         }
 
         public bool ValidateUsername(string username) {
-            if (username == null) {
-                return false;
-            }
             foreach (Users user in db.FetchAllUsers()) {
                 if (username == user.Username) {
                     return false;
@@ -236,6 +270,15 @@ namespace StoragePal1 {
                 }
             }
             return isValid;
+        }
+
+        public bool BoxExist(int userId, int boxNumber) {
+            foreach (Boxes box in db.FetchAllBoxes()) {
+                if (userId == box.UserId && boxNumber == box.Number) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public void CreateUser(string email, string username, string password) {
@@ -262,6 +305,12 @@ namespace StoragePal1 {
             return box;
         }
 
+        public Rooms GetTheRoom(string function) {
+            Rooms theRoom;
+            theRoom = db.FetchRoom(function);
+            return theRoom;
+        }
+
         public int GetBoxIdFromItem(Items item) {
             foreach (Boxes x in db.FetchAllBoxes()) {
                 if (item.BoxNumber == x.Number) {
@@ -275,24 +324,21 @@ namespace StoragePal1 {
             db.Insert(item);
         }
 
+        public void SubmiteTheBox(Boxes box) {
+            db.Insert(box);
+        }
+
         public void SubmitBox() {
             db.Insert(new Boxes() {
                 UserId = ((int)Application.Current.Properties["userId"]),
                 Number = Number,
                 Category = Category,
-                QRCode = QRCode
+                QRCode = QRCode,
+                RoomName = this.RoomName,
             });
             Number = 0;
             Category = String.Empty;
             QRCode = String.Empty;
-        }
-        public bool BoxExist(int userId, int boxNumber) {
-            foreach (Boxes box in db.FetchAllBoxes()) {
-                if (userId == box.UserId && boxNumber == box.Number) {
-                    return true;
-                }
-            }
-            return false;
         }
 
         private static string CalculateSha1Hash(string input) {

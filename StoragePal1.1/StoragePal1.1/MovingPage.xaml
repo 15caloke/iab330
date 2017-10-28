@@ -4,18 +4,41 @@
     x:Class="StoragePal1.MovingPage"
     Title = "Moving"
     Icon = "Moving_Icon.png">
-	<ContentPage.Content>
-        <StackLayout>
-          <Label Text= "Moving" 
-            HeightRequest= "70"
-            BackgroundColor= "Orange" 
-            TextColor= "White" 
-            FontAttributes= "Bold"
-            FontSize= "30"
-            HorizontalTextAlignment= "Center"
-            VerticalTextAlignment= "Center"/>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text= "Moving" 
+                HeightRequest= "70"
+                BackgroundColor= "Orange" 
+                TextColor= "White" 
+                FontAttributes= "Bold"
+                FontSize= "30"
+                HorizontalTextAlignment= "Center"
+                VerticalTextAlignment= "Center"/>
 
-            
-        </StackLayout>
-	</ContentPage.Content>
+                <!-- Needs to display what boxes are for what-->
+                <ListView ItemsSource="{Binding AllRooms}" SelectedItem="{Binding SelectedRoom, Mode=TwoWay}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem CommandParameter="{Binding .}" Clicked="MenuItem_Clicked" AutomationId="deleteOption" Text="Delete" IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal" Padding="10,0">
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label AutomationId="boxNameList" Text="{Binding Function}" FontAttributes="Bold"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button x:Name="addRoom" AutomationId="addRoom" Text="Add New Room" Clicked="AddRoom_Clicked" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

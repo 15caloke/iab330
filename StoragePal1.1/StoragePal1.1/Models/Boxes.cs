@@ -18,10 +18,16 @@ namespace StoragePal1.Models {
         //[NotNull]
         public int UserId { get; set; }
 
+        [ForeignKey(typeof(Rooms))]
+        public int RoomId { get; set; }
+
         //[NotNull]
         public int Number { get; set; }
 
         public string Category { get; set; }
+
+        //[NotNull]
+        public string RoomName { get; set; }
 
         public string QRCode { get; set; }
 

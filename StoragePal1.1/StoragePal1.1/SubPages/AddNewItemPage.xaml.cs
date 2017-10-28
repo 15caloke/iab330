@@ -31,10 +31,12 @@ namespace StoragePal1.SubPages {
 
         private void ToSubmit_Clicked(object sender, EventArgs e) {
             var selectedItem = ((MainViewModel)BindingContext).GetTheBox(Int32.Parse(boxNumber.Text));
-            if (!((MainViewModel)BindingContext).BoxExist((int)Application.Current.Properties["userId"], Int32.Parse(boxNumber.Text))) {
-                DisplayAlert("Alert","The box doesn't exist yet. Create a box in the box page","Ok");
-            }
-            else {
+            var userLoggedIn = (int)Application.Current.Properties["userId"];
+            var boxNumInput = Int32.Parse(boxNumber.Text);
+
+            if (!((MainViewModel)BindingContext).BoxExist(userLoggedIn, boxNumInput)) {
+                DisplayAlert("Alert", "The box doesn't exist yet. Create a box in the box page", "Ok");
+            } else {
                 var newItem = new Items() {
                     Name = itemName.Text,
                     BoxId = selectedItem.Id,

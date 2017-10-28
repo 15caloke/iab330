@@ -15,8 +15,11 @@ namespace StoragePal1 {
         private readonly Database db;
         private ObservableCollection<Items> items;
         private ObservableCollection<Boxes> boxes;
+        private ObservableCollection<Rooms> rooms;
         private Items selectedItem;
         private Boxes selectedBox;
+        private Rooms selectedRoom;
+        private int counter;
 
         public ObservableCollection<Items> AllItems {
             get { return items; }
@@ -30,6 +33,14 @@ namespace StoragePal1 {
             get { return boxes; }
             set {
                 boxes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Rooms> AllRooms {
+            get { return rooms; }
+            set {
+                rooms = value;
                 OnPropertyChanged();
             }
         }
@@ -50,10 +61,24 @@ namespace StoragePal1 {
             }
         }
 
+        public Rooms SelectedRoom {
+            get { return selectedRoom; }
+            set {
+                selectedRoom = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ItemsViewModel() {
+            counter = 0;
             db = new Database();
             AllItems = new ObservableCollection<Items>(db.FetchAllItems(((int)Application.Current.Properties["userId"])));
             AllBoxes = new ObservableCollection<Boxes>(db.FetchAllBoxes(((int)Application.Current.Properties["userId"])));
+            AllRooms = new ObservableCollection<Rooms>(db.FetchAllRooms(((int)Application.Current.Properties["userId"])));
+        }
+
+        public int GetCounter() {
+            return counter;
         }
 
         public void Delete(Items item) {
@@ -66,6 +91,10 @@ namespace StoragePal1 {
 
         public void Delete(Boxes box) {
             db.Delete(box);
+        }
+
+        public void Delete(Rooms room) {
+            db.Delete(room);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using StoragePal1.Databases;
 using StoragePal1.Models;
 
@@ -21,7 +22,6 @@ namespace StoragePal1 {
             Application.Current.Properties["userId"] = null;
             Application.Current.Properties["uname"] = "";
             Application.Current.Properties["isLogged"] = false;
-            Application.Current.Properties["boxId"] = null;
             Navigation.PopToRootAsync(true);
         }
 
@@ -68,6 +68,10 @@ namespace StoragePal1 {
             };
             Navigation.PushAsync(singleBoxPage);
 
+        }
+
+        private void ExportButton_Clicked(object sender, EventArgs e) {
+            // Add export function
         }
     }
 }

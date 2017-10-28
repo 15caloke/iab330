@@ -46,11 +46,13 @@
             <Button Text= "Move" 
             TextColor= "Orange" 
             FontSize= "20"/>
-            <!--
-            <Button Text= "Export" 
+
+            <Button x:Name="exportButton" Text= "Export" 
             TextColor= "Orange" 
-            FontSize= "20"/>
-            
+            FontSize= "20"
+            Clicked="ExportButton_Clicked" />
+
+            <!--
             <Button Text= "Print" 
             TextColor= "Orange" 
             FontSize= "20"/>

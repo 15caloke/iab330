@@ -18,6 +18,10 @@ namespace StoragePal1.SubPages {
             db = new Database();
         }
 
+        protected override bool OnBackButtonPressed() {
+            return base.OnBackButtonPressed();
+        }
+
         private void SaveChangesButton_Clicked(object sender, EventArgs e) {
             var theItem = ((Button)sender).CommandParameter as Items;
             var belongedBox = db.FetchBox(theItem.BoxNumber);
@@ -25,6 +29,7 @@ namespace StoragePal1.SubPages {
             db.InsertOrUpdate(theItem);
 
             // Need to make it not crash when save chnages is made (pops to login to prevent crashing)
+            //Navigation.PopAsync(true);
             Navigation.PopToRootAsync(true);
         }
     }
