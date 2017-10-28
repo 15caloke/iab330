@@ -85,6 +85,9 @@
     <Compile Include="SubPages\AddBoxPage.xaml.cs">
       <DependentUpon>AddBoxPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubPages\AddRoomPage.xaml.cs">
+      <DependentUpon>AddRoomPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SubPages\ViewSingleBoxPage.xaml.cs">
       <DependentUpon>ViewSingleBoxPage.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SubPages\ViewSingleItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SubPages\AddRoomPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
