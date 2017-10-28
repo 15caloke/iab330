@@ -13,16 +13,7 @@ namespace StoragePal1 {
             BindingContext = new ItemsViewModel();
 
             //Need to put in settings page
-            usernameLabel.Text = Application.Current.Properties["uname"].ToString();
-        }
-
-        //Need to put in settings page
-        private void Logout_Button_Clicked(object sender, EventArgs e) {
-            //Code for Log Out
-            Application.Current.Properties["userId"] = null;
-            Application.Current.Properties["uname"] = "";
-            Application.Current.Properties["isLogged"] = false;
-            Navigation.PopToRootAsync(true);
+       
         }
 
         protected override void OnAppearing() {
