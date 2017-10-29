@@ -16,7 +16,9 @@
                 HorizontalTextAlignment= "Center"
                 VerticalTextAlignment= "Center"/>
 
-                <!-- Needs to display what boxes are for what-->
+                <Button x:Name="addRoom" AutomationId="addRoom" Text="Add New Room" Clicked="AddRoom_Clicked" 
+                        TextColor="Orange" Font="20" />
+
                 <ListView ItemsSource="{Binding AllRooms}" SelectedItem="{Binding SelectedRoom, Mode=TwoWay}" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -35,9 +37,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-                <Button x:Name="addRoom" AutomationId="addRoom" Text="Add New Room" Clicked="AddRoom_Clicked" />
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

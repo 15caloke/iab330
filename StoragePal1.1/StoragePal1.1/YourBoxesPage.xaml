@@ -35,6 +35,8 @@
                 </ListView.ItemTemplate>
             </ListView>
 
+            <Label x:Name="exportFeedback" Text="" TextColor="Black" FontSize="16" />
+
             <Button Text= "Add" 
             TextColor= "Orange" 
             FontSize= "20"
@@ -49,11 +51,6 @@
             FontSize= "20"
             Clicked="ExportButton_Clicked" />
 
-            <!--
-            <Button Text= "Print" 
-            TextColor= "Orange" 
-            FontSize= "20"/>
-            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using StoragePal1.Databases;
 using StoragePal1.Models;
+using StoragePal1;
 
 using Xamarin.Forms;
 
@@ -11,26 +12,11 @@ namespace StoragePal1 {
         public YourBoxesPage() {
             InitializeComponent();
             BindingContext = new ItemsViewModel();
-
-            //Need to put in settings page
-       
         }
 
         protected override void OnAppearing() {
             BindingContext = new ItemsViewModel();
         }
-
-        //protected override void OnBindingContextChanged() {
-        //    base.OnBindingContextChanged();
-
-        //    ItemsViewModel vm = BindingContext as ItemsViewModel;
-        //    if (vm != null) {
-        //        this.thePicker.Items.Clear();
-        //        foreach (var box in vm.AllBoxes) {
-        //            thePicker.Items.Add("Box " + box.Number.ToString() + ": " + box.Category.ToString());
-        //        }
-        //    }
-        //}
 
         private void Button_Clicked(object sender, EventArgs e) {
             Navigation.PushAsync(new SubPages.AddBoxPage());
@@ -65,7 +51,30 @@ namespace StoragePal1 {
         }
 
         private void ExportButton_Clicked(object sender, EventArgs e) {
-            // Add export function
+            var file = "StoragePal_Data.txt";
+            var fileService = DependencyService.Get<ISaveAndLoad>();
+            var inputText = "";
+            var listOfBoxes = ((ItemsViewModel)BindingContext).AllBoxes;
+            var listOfItemsInEachBox = ((ItemsViewModel)BindingContext).AllItems;
+
+            inputText += Application.Current.Properties["uname"] + ": \t\t\n";
+
+            foreach (Boxes box in listOfBoxes) {
+                inputText += "\nBox " + box.Number.ToString() + " " + box.Category + " in " + box.RoomName + "\n";
+                foreach (Items item in listOfItemsInEachBox) {
+                    if (box.Number == item.BoxNumber) {
+                        inputText += item.Name + " " + item.BoxNumber.ToString() + " " + item.Description + "\n";
+                    }
+                }
+            }
+
+            exportFeedback.Text = "Data has been exported successfully";
+            fileService.SaveTextAsync(file, inputText);
+        }
+
+        protected override void OnDisappearing() {
+            base.OnDisappearing();
+            exportFeedback.Text = String.Empty;
         }
     }
 }

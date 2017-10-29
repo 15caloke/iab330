@@ -12,7 +12,8 @@
             <!-- Use Later: <Entry x:Name="boxQRCode" AutomationId="boxQRCode" Text="{Binding qrCode}" />-->
             <Button x:Name="submitBox" AutomationId="submitBox" 
                     Clicked="SubmitBox_Clicked"
-                    Text="Add Box"/>
+                    Text="Save Box"
+                    TextColor="Orange" FontSize="20"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

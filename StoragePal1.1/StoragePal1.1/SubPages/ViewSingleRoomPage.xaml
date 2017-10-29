@@ -6,7 +6,8 @@
         <StackLayout>
             <Label x:Name="FunctionLabel" Text="{Binding Function}" />
 
-            <Button x:Name="FinishedButton" Text="Go Back" Clicked="FinishedButton_Clicked" />
+            <Button x:Name="FinishedButton" Text="Go Back" 
+                    TextColor="Orange" Font="20" Clicked="FinishedButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

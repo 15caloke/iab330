@@ -8,7 +8,8 @@
             <Entry x:Name="itemNameSingle" Text="{Binding Name}" />
             <Entry x:Name="itemDescriptionSingle" Text="{Binding Description}" />
             <Entry x:Name="itemBoxNumberSingle" Text="{Binding BoxNumber}" Keyboard="Numeric" />
-            <Button x:Name="saveChangesButton" CommandParameter="{Binding .}" Text="Save Changes" Clicked="SaveChangesButton_Clicked"/>
+            <Button x:Name="saveChangesButton" CommandParameter="{Binding .}" Text="Save Changes" 
+                    TextColor="Orange" Font="20" Clicked="SaveChangesButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

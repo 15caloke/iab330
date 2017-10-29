@@ -30,7 +30,5 @@ namespace StoragePal1.Models {
         public int BoxNumber { get; set; }
 
         public string ImagePath { get; set; }
-
-        //public List<Items> ItemGroup { get; set; }
     }
 }

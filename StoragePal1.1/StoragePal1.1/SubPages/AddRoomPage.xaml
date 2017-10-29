@@ -6,8 +6,8 @@
         <StackLayout>
             <Label x:Name="ErrorLabel" TextColor="Red" />
             <Entry x:Name="funtionEntry" Text="{Binding Function}" Placeholder="Room(s)" />
-            <Button x:Name="submitRoom" AutomationId="submitRoom" Text="Submit" 
-                    Clicked="SubmitRoom_Clicked" Command="{Binding SubmitRoomCommand}" />
+            <Button x:Name="submitRoom" AutomationId="submitRoom" Text="Submit" Font="20" 
+                    TextColor="Orange" Clicked="SubmitRoom_Clicked" Command="{Binding SubmitRoomCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

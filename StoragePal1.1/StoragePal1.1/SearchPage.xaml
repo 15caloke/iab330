@@ -6,11 +6,11 @@
     Icon = "Logout_Icon.png">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30,0" Spacing="20">
-              <Image  Source="LogOut_Image.png"
+            <Image  Source="LogOut_Image.png"
                   WidthRequest="200" 
                   VerticalOptions= "CenterAndExpand"
                   HorizontalOptions="CenterAndExpand"/>
-            <Label x:Name="usernameLabel" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="usernameLabel" HorizontalOptions="CenterAndExpand" Font="20" TextColor="Black" />
             <Button x:Name="logoutButton" Text="Logout" Clicked="Logout_Button_Clicked" TextColor= "Orange" 
             FontSize= "20" Font="Bold"/>
         </StackLayout>

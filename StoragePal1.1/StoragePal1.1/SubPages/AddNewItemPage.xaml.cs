@@ -12,23 +12,6 @@ namespace StoragePal1.SubPages {
             BindingContext = new MainViewModel();
         }
 
-        //private void TapGestureRecognizer_Tapped(object sender, EventArgs e) {
-        //    //var selectedItems = ((TapGestureRecognizer)sender).CommandParameter as Items;
-        //    //var boxId = ((MainViewModel)BindingContext).Lmao(selectedItems);
-
-        //    //var newItem = new Items() {
-        //    //    Name = selectedItems.Name,
-        //    //    BoxId = boxId,
-        //    //    Description = selectedItems.Description,
-        //    //    BoxNumber = selectedItems.BoxNumber,
-        //    //    ImagePath = selectedItems.ImagePath,
-        //    //};
-
-        //    //((MainViewModel)BindingContext).SubmitTheItem(newItem);
-
-        //    //Navigation.PopAsync(true);
-        //}
-
         private void ToSubmit_Clicked(object sender, EventArgs e) {
             var selectedItem = ((MainViewModel)BindingContext).GetTheBox(Int32.Parse(boxNumber.Text));
             var userLoggedIn = (int)Application.Current.Properties["userId"];

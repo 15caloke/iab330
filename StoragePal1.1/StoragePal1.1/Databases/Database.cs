@@ -19,7 +19,6 @@ namespace StoragePal1.Databases {
             database.CreateTable<Boxes>();
             database.CreateTable<Items>();
             database.CreateTable<Rooms>();
-            //database.CreateTable<Collaboration>();
         }
 
         public int Insert(Users users) {
@@ -45,17 +44,6 @@ namespace StoragePal1.Databases {
             database.Commit();
             return room;
         }
-
-        //public int InsertOrUpdate(Items items) {
-        //    int num;
-        //    if (database.Table<Items>().Any(entry => entry.Id == items.Id)) {
-        //        num = database.Update(items);
-        //    } else {
-        //        num = database.Insert(items);
-        //    }
-        //    database.Commit();
-        //    return num;
-        //}
 
         public int InsertOrUpdate(int id) {
             int num;
@@ -168,10 +156,6 @@ namespace StoragePal1.Databases {
             return database.Table<Items>().Where(items => items.UserId == user).ToList();
         }
 
-        //public List<Collaboration> FetchAllCollab() {
-        //    return database.Table<Collaboration>().ToList();
-        //}
-
         public Users FetchUser(int key) {
             return database.Table<Users>().Where(entry => entry.Id == key).FirstOrDefault();
         }
@@ -195,9 +179,5 @@ namespace StoragePal1.Databases {
         public Rooms FetchRoom(string function) {
             return database.Table<Rooms>().Where(entry => entry.Function == function).FirstOrDefault();
         }
-
-        //public Collaboration FetchCollab(int key) {
-        //    return database.Table<Collaboration>().Where(entry => entry.BoxId == key || entry.UserId == key).FirstOrDefault();
-        //}
     }
 }

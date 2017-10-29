@@ -30,7 +30,5 @@ namespace StoragePal1.Models {
         public string RoomName { get; set; }
 
         public string QRCode { get; set; }
-
-        //public List<Boxes> BoxGroup { get; set; }
     }
 }

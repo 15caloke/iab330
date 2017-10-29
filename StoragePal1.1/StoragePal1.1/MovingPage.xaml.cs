@@ -10,14 +10,22 @@ namespace StoragePal1 {
         private const int FONT_SIZE = 16;
         private List<Boxes> relatedBoxes;
         private Label boxNumbersLabel;
+        private Database db;
+        private List<string> roomNames;
 
         public MovingPage() {
             InitializeComponent();
             BindingContext = new ItemsViewModel();
+            roomNames = new List<string>();
+            db = new Database();
             relatedBoxes = new List<Boxes>();
             boxNumbersLabel = new Label() {
                 FontSize = FONT_SIZE,
-                FontAttributes = FontAttributes.Bold,
+                HeightRequest = 70,
+                //BackgroundColor = Color.Orange,
+                //TextColor = Color.White,
+                //FontAttributes = FontAttributes.Bold,
+                //Text = "Room\n"
             };
         }
 
@@ -30,13 +38,32 @@ namespace StoragePal1 {
         }
 
         private void MenuItem_Clicked(object sender, EventArgs e) {
+            roomNames.Clear();
             var selectedRoom = ((MenuItem)sender).CommandParameter as Rooms;
-            ((ItemsViewModel)BindingContext).Delete(selectedRoom);
-            OnAppearing();
+            var allBoxes = ((ItemsViewModel)BindingContext).AllBoxes;
+
+            foreach (Boxes box in allBoxes) {
+                if (selectedRoom.Function == box.RoomName) {
+                    roomNames.Add(box.RoomName);
+                }
+            }
+
+            if (roomNames.Contains(selectedRoom.Function)) {
+                // add event to delete room and all boxes in it, if they press yes
+                DisplayAlert("Room contains boxes",
+                    "If you delete the room you'll delete all boxes in it, are you sure you want to delete it?",
+                    "Yes", "No");
+            } else {
+                ((ItemsViewModel)BindingContext).Delete(selectedRoom);
+                OnAppearing();
+            }
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedRoom = e.SelectedItem as Rooms;
+
+            //boxNumbersLabel.TextColor = Color.Black;
+            //boxNumbersLabel.BackgroundColor = Color.White;
 
             if (selectedRoom == null) { } else {
                 var theRoom = new Rooms() {
@@ -52,9 +79,9 @@ namespace StoragePal1 {
                 }
 
                 if (relatedBoxes.Count == 0 || relatedBoxes == null) {
-                    boxNumbersLabel.Text = "There are no boxes in this room";
+                    boxNumbersLabel.Text = "\tThere are no boxes in this room";
                 } else {
-                    boxNumbersLabel.Text = "Boxes in the " + theRoom.Function + " are: \n";
+                    boxNumbersLabel.Text = "\tBoxes in the " + theRoom.Function + " are: \n\n";
                 }
 
                 foreach (Boxes eachBox in relatedBoxes) {

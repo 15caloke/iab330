@@ -35,7 +35,8 @@
             VerticalOptions= "CenterAndExpand"
             HorizontalOptions="CenterAndExpand"/>-->
 
-            <Button x:Name="ToSubmit" Text="Submit" Clicked="ToSubmit_Clicked" />
+            <Button x:Name="ToSubmit" Text="Submit" TextColor="Orange" 
+                    Font="20" Clicked="ToSubmit_Clicked" />
 
             <!--<Image Source="add_item_icon.png"
             WidthRequest="50" 
