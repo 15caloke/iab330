@@ -9,5 +9,4 @@
     <local:MovingPage/>
     <local:YourBoxesPage/>
     <local:SearchPage/>
-    <!--<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
 </TabbedPage>

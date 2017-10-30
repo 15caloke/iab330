@@ -56,6 +56,8 @@ namespace StoragePal1 {
             searchedItems.Clear();
             var inputtedSearch = searchBar.Text;
             var listOfItems = ((ItemsViewModel)BindingContext).AllItems;
+
+            // searches through each item and adds any items to a temporary list that match
             foreach (Items item in listOfItems) {
                 if (item.Name.Contains(inputtedSearch.ToLower())
                     || item.Name.Contains(inputtedSearch.ToUpper())
@@ -66,6 +68,7 @@ namespace StoragePal1 {
                 }
             }
 
+            // refresh the page and display the items matched with the search bar inputted text
             itemsList.ItemsSource = searchedItems;
             OnAppearing();
         }

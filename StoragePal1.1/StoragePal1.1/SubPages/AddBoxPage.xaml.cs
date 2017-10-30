@@ -10,6 +10,13 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace StoragePal1.SubPages {
+    /*
+     * A subpage to add new box information
+     * and submit it to the database if it 
+     * passes validation
+     * 
+     * Date: 29th October 2017
+     */
     public partial class AddBoxPage : ContentPage {
         public AddBoxPage() {
             InitializeComponent();
@@ -19,7 +26,10 @@ namespace StoragePal1.SubPages {
         private void SubmitBox_Clicked(object sender, EventArgs e) {
             var userLoggedIn = (int)Application.Current.Properties["userId"];
             var boxNumInput = Int32.Parse(boxNumber.Text);
-            var theRoom = ((MainViewModel)BindingContext).GetTheRoom(roomName.Text);
+            var theRoom = ((MainViewModel)BindingContext).GetTheRoom(roomName.Text, userLoggedIn);
+
+            // Detects if the room's name is in the database and the box number according to the user logged in
+            // and submits it to the database if both fields exist
             if (((MainViewModel)BindingContext).BoxExist(userLoggedIn, boxNumInput)) {
                 DisplayAlert("Already exist", "The box you want to create is already exist. Please enter a different number", "OK");
             } else if (theRoom == null) {
@@ -36,7 +46,6 @@ namespace StoragePal1.SubPages {
                 };
 
                 ((MainViewModel)BindingContext).SubmiteTheBox(theBox);
-
                 Navigation.PopAsync(true);
             }
         }

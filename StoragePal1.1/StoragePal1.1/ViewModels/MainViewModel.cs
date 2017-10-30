@@ -15,7 +15,6 @@ namespace StoragePal1 {
         private readonly Database db;
 
         private string name;
-
         public string Name {
             get { return name; }
             set {
@@ -25,7 +24,6 @@ namespace StoragePal1 {
         }
 
         private string description;
-
         public string Description {
             get { return description; }
             set {
@@ -182,18 +180,17 @@ namespace StoragePal1 {
             SubmitItemCommand = new Command(SubmitItems);
             SubmitUserCommand = new Command(SubmitUsers);
             SubmitBoxCommand = new Command(SubmitBox);
-            SubmitRoomCommand = new Command(SubmitRoom);
         }
 
         public void SubmitItems() {
-            if (this.BoxNumber <= 0 || this.BoxNumber > 100) { // modify number
+            if (this.BoxNumber <= 0 || this.BoxNumber > 100) {
                 Label lbl = new Label {
                     Text = "Cannot have excessive or illigitimate box numbers"
                 };
             } else {
                 db.Insert(new Items() {
                     Name = this.Name,
-                    BoxId = TheBox.Id, // needs modification
+                    BoxId = TheBox.Id,
                     Description = this.Description,
                     BoxNumber = this.BoxNumber,
                     ImagePath = this.ImagePath
@@ -219,12 +216,17 @@ namespace StoragePal1 {
             Username = String.Empty;
             Password = String.Empty;
         }
-        public void SubmitRoom() {
-            db.Insert(new Rooms() {
-                UserId = ((int)(Application.Current.Properties["userId"])),
-                Function = Function,
-            });
-            Function = String.Empty;
+        public void SubmitRoom(Rooms room) {
+            db.Insert(room);
+        }
+
+        public bool ValidateRoom(string roomName, int userId) {
+            foreach (Rooms room in db.FetchAllRooms()) {
+                if (room.Function == roomName && room.UserId == userId) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool ValidateUser(string username, string password) {
@@ -261,7 +263,7 @@ namespace StoragePal1 {
         public bool ValidateSignup(string email, string username) {
             bool isValid = false;
             foreach (Users user in db.FetchAllUsers()) {
-                if (email != user.Email && username != user.Username) { // may need to change to || ?
+                if (email != user.Email && username != user.Username) {
                     isValid = true;
                 } else {
                     isValid = false;
@@ -297,15 +299,15 @@ namespace StoragePal1 {
             return user;
         }
 
-        public Boxes GetTheBox(int boxNum) {
+        public Boxes GetTheBox(int boxNum, int userId) {
             Boxes box;
-            box = db.FetchBox(boxNum);
+            box = db.FetchBox(boxNum, userId);
             return box;
         }
 
-        public Rooms GetTheRoom(string function) {
+        public Rooms GetTheRoom(string function, int userId) {
             Rooms theRoom;
-            theRoom = db.FetchRoom(function);
+            theRoom = db.FetchRoom(function, userId);
             return theRoom;
         }
 

@@ -11,15 +11,15 @@
 namespace StoragePal1.SubPages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/jedriggs/Documents/GitHub/iab330/StoragePal1.1/StoragePal1.1/SubPages/View" +
-        "SingleBoxPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\calum\\Documents\\GitHub\\iab330\\StoragePal1.1\\StoragePal1.1\\SubPages\\ViewS" +
+        "ingleBoxPage.xaml")]
     public partial class ViewSingleBoxPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label titleLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry boxNameSingle;
+        private global::Xamarin.Forms.Entry boxNumSingle;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry boxCategorySingle;
@@ -34,7 +34,7 @@ namespace StoragePal1.SubPages {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ViewSingleBoxPage));
             titleLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "titleLabel");
-            boxNameSingle = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "boxNameSingle");
+            boxNumSingle = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "boxNumSingle");
             boxCategorySingle = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "boxCategorySingle");
             boxRoomName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "boxRoomName");
             saveChangesButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "saveChangesButton");

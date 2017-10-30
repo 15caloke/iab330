@@ -6,26 +6,30 @@ using StoragePal1.Models;
 using Xamarin.Forms;
 
 namespace StoragePal1 {
+    /*
+     * Shows a list of rooms to the user who created them
+     * and their name/function. Room data is passed onto a new page
+     * to view the selected room, if the user clicks on it in the
+     * listview
+     * 
+     * Date: 29th October 2017
+     */
     public partial class MovingPage : ContentPage {
-        private const int FONT_SIZE = 16;
+        private const int FONT_SIZE = 16, MIN_PAGE_HEIGHT = 70;
         private List<Boxes> relatedBoxes;
         private Label boxNumbersLabel;
-        private Database db;
         private List<string> roomNames;
 
         public MovingPage() {
             InitializeComponent();
             BindingContext = new ItemsViewModel();
             roomNames = new List<string>();
-            db = new Database();
             relatedBoxes = new List<Boxes>();
             boxNumbersLabel = new Label() {
                 FontSize = FONT_SIZE,
-                HeightRequest = 70,
-                //BackgroundColor = Color.Orange,
-                //TextColor = Color.White,
-                //FontAttributes = FontAttributes.Bold,
-                //Text = "Room\n"
+                HeightRequest = MIN_PAGE_HEIGHT,
+                TextColor = Color.Black,
+                HorizontalTextAlignment = TextAlignment.Center
             };
         }
 
@@ -38,32 +42,16 @@ namespace StoragePal1 {
         }
 
         private void MenuItem_Clicked(object sender, EventArgs e) {
-            roomNames.Clear();
             var selectedRoom = ((MenuItem)sender).CommandParameter as Rooms;
             var allBoxes = ((ItemsViewModel)BindingContext).AllBoxes;
 
-            foreach (Boxes box in allBoxes) {
-                if (selectedRoom.Function == box.RoomName) {
-                    roomNames.Add(box.RoomName);
-                }
-            }
-
-            if (roomNames.Contains(selectedRoom.Function)) {
-                // add event to delete room and all boxes in it, if they press yes
-                DisplayAlert("Room contains boxes",
-                    "If you delete the room you'll delete all boxes in it, are you sure you want to delete it?",
-                    "Yes", "No");
-            } else {
-                ((ItemsViewModel)BindingContext).Delete(selectedRoom);
-                OnAppearing();
-            }
+            roomNames.Clear();
+            ((ItemsViewModel)BindingContext).Delete(selectedRoom);
+            OnAppearing();
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
             var selectedRoom = e.SelectedItem as Rooms;
-
-            //boxNumbersLabel.TextColor = Color.Black;
-            //boxNumbersLabel.BackgroundColor = Color.White;
 
             if (selectedRoom == null) { } else {
                 var theRoom = new Rooms() {
@@ -72,6 +60,7 @@ namespace StoragePal1 {
                     Function = selectedRoom.Function,
                 };
 
+                // add boxes that are in the room to a new list of boxes
                 foreach (Boxes box in ((ItemsViewModel)BindingContext).AllBoxes) {
                     if (box.RoomId == theRoom.Id) {
                         relatedBoxes.Add(box);
@@ -84,6 +73,7 @@ namespace StoragePal1 {
                     boxNumbersLabel.Text = "\tBoxes in the " + theRoom.Function + " are: \n\n";
                 }
 
+                // display information about each box on the ViewSingleRoom page
                 foreach (Boxes eachBox in relatedBoxes) {
                     boxNumbersLabel.Text += "Box " + eachBox.Number.ToString() + " - " + eachBox.Category + "\n";
                 }

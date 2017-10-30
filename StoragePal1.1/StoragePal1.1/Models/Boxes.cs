@@ -7,6 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StoragePal1.Models {
+    /*
+     * A model for Boxes which store items
+     * and are owned by a user, as their ID
+     * will be used to determine which box
+     * is owned by which user
+     * 
+     * Date: 29th October 2017
+     */
     public class Boxes {
 
         [PrimaryKey]

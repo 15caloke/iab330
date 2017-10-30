@@ -9,7 +9,6 @@
             <Entry x:Name="boxCategory" AutomationId="boxCategory" 
                    Placeholder="Label" Text="{Binding Category}" />
             <Entry x:Name="roomName" Placeholder="Room Name" Text="{Binding RoomName}" />
-            <!-- Use Later: <Entry x:Name="boxQRCode" AutomationId="boxQRCode" Text="{Binding qrCode}" />-->
             <Button x:Name="submitBox" AutomationId="submitBox" 
                     Clicked="SubmitBox_Clicked"
                     Text="Save Box"

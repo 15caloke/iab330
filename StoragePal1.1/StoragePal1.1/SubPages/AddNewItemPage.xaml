@@ -15,7 +15,7 @@
             <Entry x:Name="itemDescription"
             AutomationId="itemDescription"
             Text="{Binding Description}"
-            HorizontalTextAlignment="Center" Placeholder="DESCRIPTION" HeightRequest="200"/>
+            HorizontalTextAlignment="Center" Placeholder="DESCRIPTION" HeightRequest="100"/>
 
             <Entry x:Name="boxNumber" 
             AutomationId="boxNumber"
@@ -24,34 +24,8 @@
             Placeholder="BOX NUMBER"
             HorizontalTextAlignment="Center"/>
 
-            <!--      <Entry x:Name="imagePath"
-            AutomationId="imagePath"
-                   Text="{Binding ImagePath}"
-            HorizontalTextAlignment="Center" /> -->
-
-            <!--<Image Source="ImageUploadIcon.png"
-            WidthRequest="100" 
-            HeightRequest="100"
-            VerticalOptions= "CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"/>-->
-
             <Button x:Name="ToSubmit" Text="Submit" TextColor="Orange" 
-                    Font="20" Clicked="ToSubmit_Clicked" />
-
-            <!--<Image Source="add_item_icon.png"
-            WidthRequest="50" 
-            HeightRequest="50"
-            VerticalOptions= "CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-                        NumberOfTapsRequired="1"
-                        Tapped="TapGestureRecognizer_Tapped"
-                        CommandParameter="{Binding .}"
-                         />
-                </Image.GestureRecognizers>
-            </Image>-->
+            Font="20" Clicked="ToSubmit_Clicked" />
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

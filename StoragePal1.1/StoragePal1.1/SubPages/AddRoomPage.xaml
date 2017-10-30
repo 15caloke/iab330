@@ -5,9 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="ErrorLabel" TextColor="Red" />
-            <Entry x:Name="funtionEntry" Text="{Binding Function}" Placeholder="Room(s)" />
+            <Entry x:Name="funtionEntry" Text="{Binding Function}" Placeholder="Room Name" />
             <Button x:Name="submitRoom" AutomationId="submitRoom" Text="Submit" Font="20" 
-                    TextColor="Orange" Clicked="SubmitRoom_Clicked" Command="{Binding SubmitRoomCommand}" />
+             TextColor="Orange" Clicked="SubmitRoom_Clicked" CommandParameter="{Binding .}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -8,6 +8,12 @@ using Xamarin.Forms.Xaml;
 
 namespace StoragePal1 {
     public partial class SignUpPage : ContentPage {
+        /*
+         * Allows new users to register an account and store the
+         * account information to the local database, as long it passes validation.
+         * 
+         * Date: 29th October 2017
+         */
         public SignUpPage() {
             InitializeComponent();
             BindingContext = new MainViewModel();
@@ -16,6 +22,10 @@ namespace StoragePal1 {
         private void OnCreate(object sender, EventArgs e) {
             invalidMessage.Text = "";
             string currentEmail = emailEntry.Text;
+
+            // Checks against inputted emails, passwords and usernames to make sure
+            // that there is no user with those details already stored in the database and
+            // the new user enters a srong enough password, username and valid email
             if (!Validation.Validation.ValidEmail(emailEntry.Text)) {
                 invalidMessage.Text = "Please enter a valid email address";
             } else if (!Validation.Validation.ValidUsername(usernameEntry.Text)) {

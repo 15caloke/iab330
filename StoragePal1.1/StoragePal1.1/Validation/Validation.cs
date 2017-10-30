@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace StoragePal1.Validation {
+    /*
+     * Class for validating input fields, mainly used for users logging in
+     * and signing up
+     * 
+     * Date: 29th October 2017
+     */
     public static class Validation {
         public static bool ValidUsername(string username) {
             if (username == null) {

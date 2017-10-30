@@ -68,15 +68,5 @@ namespace StoragePalTests.ViewModelTests {
 
             Assert.Inconclusive("Cannot be tested");
         }
-
-        //[Test]
-        //public void TestExceptionThrownWhenXXX() {
-        //    main.Name = "Hello";
-        //    main.Description = "this description";
-        //    main.BoxNumber = -4;
-        //    main.ImagePath = "C:/testing/moreTesting";
-        //    Assert.Throws<NegativeNumException>(main.Submit());
-        //}
-
     }
 }

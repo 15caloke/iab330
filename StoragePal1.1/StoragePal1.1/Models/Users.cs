@@ -6,6 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StoragePal1.Models {
+    /*
+     * A Model for the User table in the database with
+     * each getter/setter method being a field
+     * 
+     * Date: 29th October 2017
+     */
     public class Users {
 
         [PrimaryKey]

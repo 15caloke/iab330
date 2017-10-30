@@ -10,18 +10,16 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace StoragePal1.SubPages {
+    /*
+     * Shows all room information including the name, and 
+     * all boxes being contained in the room, according to the 
+     * room selected on the previous page from the listview
+     * 
+     * Date: 29th of October 2017
+     */
     public partial class ViewSingleRoomPage : ContentPage {
-        Label headingLabel;
-
         public ViewSingleRoomPage() {
             InitializeComponent();
-            // need to add to the page
-            headingLabel = new Label() {
-                AnchorX = 0,
-                AnchorY = 0,
-                Text = "Room",
-                IsVisible = true
-            };
         }
 
         private void FinishedButton_Clicked(object sender, EventArgs e) {

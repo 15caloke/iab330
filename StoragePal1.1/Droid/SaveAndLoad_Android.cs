@@ -16,6 +16,12 @@ using StoragePal1;
 
 [assembly: Dependency(typeof(SaveAndLoad_Android))]
 namespace StoragePal1.Droid {
+    /*
+     * Saves and Load exported data into a file in the 
+     * file location specified for Android filesystem
+     * 
+     * Date: 29th October 2017
+     */
     public class SaveAndLoad_Android : ISaveAndLoad {
         #region ISaveAndLoad implementation
         public async Task SaveTextAsync(string filename, string text) {

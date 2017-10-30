@@ -70,11 +70,12 @@ namespace StoragePal1 {
         }
 
         public ItemsViewModel() {
+            var userLoggedin = ((int)Application.Current.Properties["userId"]);
             counter = 0;
             db = new Database();
-            AllItems = new ObservableCollection<Items>(db.FetchAllItems(((int)Application.Current.Properties["userId"])));
-            AllBoxes = new ObservableCollection<Boxes>(db.FetchAllBoxes(((int)Application.Current.Properties["userId"])));
-            AllRooms = new ObservableCollection<Rooms>(db.FetchAllRooms(((int)Application.Current.Properties["userId"])));
+            AllItems = new ObservableCollection<Items>(db.FetchAllItems(userLoggedin));
+            AllBoxes = new ObservableCollection<Boxes>(db.FetchAllBoxes(userLoggedin));
+            AllRooms = new ObservableCollection<Rooms>(db.FetchAllRooms(userLoggedin));
         }
 
         public int GetCounter() {

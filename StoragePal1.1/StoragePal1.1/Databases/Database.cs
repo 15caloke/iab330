@@ -9,9 +9,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace StoragePal1.Databases {
+    /*
+     * Create the database using the models and SQLite Dependency Service
+     * database file is stored in emulator's filesystem
+     * 
+     * Date: 29th October 2017
+     */
     public class Database {
         static SQLiteConnection database;
 
+        /// <summary>
+        /// Creates a new SQLite database connection and
+        /// tables using the models and their fields
+        /// </summary>
         public Database() {
             database = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
                 DependencyService.Get<IFilePath>().GetFilePath("StoragePal1_1.db3"));
@@ -168,6 +178,10 @@ namespace StoragePal1.Databases {
             return database.Table<Boxes>().Where(entry => entry.Number == boxNum).FirstOrDefault();
         }
 
+        public Boxes FetchBox(int boxNum, int userId) {
+            return database.Table<Boxes>().Where(entry => entry.Number == boxNum && entry.UserId == userId).FirstOrDefault();
+        }
+
         public Items FetchItem(int key) {
             return database.Table<Items>().Where(entry => entry.Id == key).FirstOrDefault();
         }
@@ -178,6 +192,10 @@ namespace StoragePal1.Databases {
 
         public Rooms FetchRoom(string function) {
             return database.Table<Rooms>().Where(entry => entry.Function == function).FirstOrDefault();
+        }
+
+        public Rooms FetchRoom(string function, int userId) {
+            return database.Table<Rooms>().Where(entry => entry.Function == function && entry.UserId == userId).FirstOrDefault();
         }
     }
 }
